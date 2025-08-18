@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC入れ替え作業マニュアル</title>
+    <!-- Tailwind CSSを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter & Noto Sans JP) を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 日本語フォントとInterを適用 */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* detailsタグのアコーディオン用マーカーをカスタマイズ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details > summary::before {
+            content: '▼';
+            margin-right: 0.5rem;
+            font-size: 0.8em;
+            transition: transform 0.2s ease-in-out;
+            display: inline-block;
+        }
+        details[open] > summary::before {
+            transform: rotate(180deg);
+        }
+        /* スムーズスクロールを有効に */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* プログレスバーの分だけ、コンテンツの最下部に余白を確保 */
+        body {
+            padding-bottom: 100px;
+        }
+        .screenshot-placeholder {
+            border: 2px dashed #d1d5db;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+            text-align: center;
+            color: #6b7280;
+            padding: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="top" class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- ヘッダー -->
+        <header class="bg-white shadow-md rounded-xl p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">PC入れ替え作業マニュアル</h1>
+            <p class="mt-2 text-gray-600">このマニュアルは、社用PCを新しいPCへ入れ替える際の作業手順をまとめたものです。</p>
+        </header>
+
+        <div class="flex flex-col lg:flex-row-reverse lg:gap-8">
+            
+            <!-- サイドバー (目次) -->
+            <aside class="w-full lg:w-64 flex-shrink-0 mb-8 lg:mb-0">
+                <nav class="sticky top-4 bg-white shadow-md rounded-xl p-6">
+                    <h2 class="text-xl font-bold mb-4 border-b pb-2">目次</h2>
+                    <ul class="list-none space-y-3">
+                        <li><a href="#step1" class="text-blue-600 hover:underline font-medium">ステップ1：旧PC準備</a></li>
+                        <li><a href="#step2" class="text-blue-600 hover:underline font-medium">ステップ2：新PC設定</a></li>
+                        <li><a href="#step3" class="text-blue-600 hover:underline font-medium">ステップ3：旧PC返却</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- メインコンテンツ -->
+            <div class="flex-grow">
+                <main class="space-y-8">
+                    <!-- ステップ1: 旧PCでの事前準備 -->
+                    <section id="step1" class="bg-white shadow-md rounded-xl p-6">
+                        <h2 class="text-2xl font-bold text-blue-600 border-b-2 border-blue-200 pb-2 mb-4">ステップ1：旧PCでの事前準備（データバックアップ）</h2>
+                        <p class="mb-6">新しいPCへデータを移行するため、旧PCで必要なデータをバックアップします。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-blue-600 focus:ring-blue-500 mr-3" data-task-id="step1-1">
+                                    <span class="bg-red-500 text-white text-xs font-bold mr-2 px-2 py-1 rounded-full">必須</span>1-1. TrustLoginの証明書
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>旧PCのデスクトップ等にある証明書ファイル（例：Client Cert.zip）を、ご自身のTeamsのチャット（自分宛てのチャット）にアップロードして保管します。OneDriveへの保存でも問題ありません。</p>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                 <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-blue-600 focus:ring-blue-500 mr-3" data-task-id="step1-2">
+                                    <span class="bg-gray-400 text-white text-xs font-bold mr-2 px-2 py-1 rounded-full">任意</span>1-2. ユーザー辞書ツール
+                                </label>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-blue-600 focus:ring-blue-500 mr-3" data-task-id="step1-3">
+                                    <span class="bg-gray-400 text-white text-xs font-bold mr-2 px-2 py-1 rounded-full">任意</span>1-3. Webブラウザのブックマーク
+                                </label>
+                            </div>
+                            
+                             <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-blue-600 focus:ring-blue-500 mr-3" data-task-id="step1-4">
+                                    <span class="bg-gray-400 text-white text-xs font-bold mr-2 px-2 py-1 rounded-full">任意</span>1-4. その他ご自身で移行したいデータ
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ステップ2: 新PCでの設定 -->
+                    <section id="step2" class="bg-white shadow-md rounded-xl p-6">
+                        <h2 class="text-2xl font-bold text-green-600 border-b-2 border-green-200 pb-2 mb-4">ステップ2：新PCでの設定</h2>
+                        <p class="mb-6">新しいPCを業務で利用できるようにセットアップします。手順に沿って進めてください。</p>
+                        
+                        <div class="space-y-6">
+                            <!-- 2-1. デバイス登録 -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-1">
+                                    <span class="flex-grow">2-1. デバイス登録</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>(1) 「Windowsの設定＞アカウント＞職場または学校にアクセスする」を選択して以下の画面を表示し、[+接続]を押下します。</p>
+                                        <div class="screenshot-placeholder"><p>ここに「職場または学校にアクセスする」画面のキャプチャを挿入</p></div>
+                                        <p>(2) [このデバイスをAzure Active Directoryに参加させる]を選択します。</p>
+                                        <div class="screenshot-placeholder"><p>ここに「職場または学校アカウントのセットアップ」画面のキャプチャを挿入</p></div>
+                                        <p>(3) Microsoft365アカウントのID/PWを入力しサインインします。（PC入替時はご自身で設定されているID/PW）</p>
+                                        <p>(4) 表示された「接続先」「ユーザー名」を確認し、[参加する] を選択します。</p>
+                                        <div class="screenshot-placeholder"><p>ここに「組織への参加を確認」画面のキャプチャを挿入</p></div>
+                                        <p>(5) [完了]を選択します。</p>
+                                        <p>(6) 「職場または学校にアクセスする」の画面に、ご自身の組織アカウントが表示されていることを確認します。</p>
+                                        <div class="screenshot-placeholder"><p>ここにアカウントが追加された後の画面のキャプチャを挿入</p></div>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-2. ユーザーの切り替え -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-2">
+                                    <span class="flex-grow">2-2. ユーザーの切り替え</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                     <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>(1) スタートメニューから現在設定されているアカウントを選択し、「・・・」⇒[Switch user]の順で押下します。</p>
+                                        <div class="screenshot-placeholder"><p>ここに「ユーザーの切り替え」画面のキャプチャを挿入</p></div>
+                                        <p>(2) 「他のユーザー」>「職場または学校アカウント」を選択し、自身のMS365のID/PWを入力します。</p>
+                                        <p>(3) ID/PWを入力後、PINの設定が求められるため、「英字と記号を含める」にチェックを入れて設定します。</p>
+                                        <div class="screenshot-placeholder"><p>ここに「PINのセットアップ」画面のキャプチャを挿入</p></div>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-3. Bitlockerの設定 -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                     <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-3">
+                                    <span class="flex-grow">2-3. Bitlockerの設定</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>(1) コントロールパネルから「システムとセキュリティ」→「BitLocker ドライブ暗号化」を開き、「BitLockerを有効にする」を選択します。</p>
+                                        <p>(2) <span class="font-bold">「スタートアップ時にドライブのロックを解除する方法を選択します」</span> という画面で、「PINを入力する」を選択します。</p>
+                                        <p>(3) <span class="font-bold">「回復キーのバックアップ方法を指定してください」</span> という画面が表示されます。万が一PINを忘れた場合に備え、必ず「ファイルに保存する」などを選択し、USBメモリやOneDriveなど<span class="font-bold">このPC以外の安全な場所</span>に保存してください。</p>
+                                        <p>(4) <span class="font-bold">「ドライブを暗号化する範囲の選択」</span> という画面で、「ドライブ全体を暗号化する」を選択します。</p>
+                                        <p>(5) <span class="font-bold">「使用する暗号化モードを選ぶ」</span> という画面で、「新しい暗号化モード」を選択します。</p>
+                                        <p>(6) 最後に<span class="font-bold">「このドライブを暗号化する準備ができましたか？」</span>という画面で、「BitLockerシステムチェックを実行する」にチェックを入れて、「続行」をクリックし、PCを再起動します。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-4. Chromeのインストールと設定 -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-4">
+                                    <span class="flex-grow">2-4. Chromeのインストールと設定</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>(1) <a href="https://www.google.com/intl/ja_jp/chrome/" target="_blank" class="text-blue-600 hover:underline">公式サイト</a>からChromeをダウンロードし、インストールします。</p>
+                                        <p>(2) 「設定 > 自動入力とパスワード > Googleパスワードマネージャー > 設定」で、「パスワードとパスキーを保存するか確認する」「パスキーを自動作成してすばやくログイン」「自動ログイン」をすべてオフにします。</p>
+                                        <div class="screenshot-placeholder"><p>ここにChromeのパスワード設定画面のキャプチャを挿入</p></div>
+                                        <p>(3) Chromeウェブストアで「TrustLogin」を検索し、[Chromeに追加]します。</p>
+                                        <p>(4) 同様に「Microsoft Single Sign On」を検索し、[Chromeに追加]します。</p>
+                                        <p>(5) Chromeウェブストアで「Microsoft Defender Browser Protection」を表示し、[Chromeに追加]を選択しインストールします。</p>
+                                        <p>(6) Chrome右上のパズルのピースのマーク（拡張機能）を選択し、「TrustLogin」、「Microsoft Single Sign On」、「Microsoft Defender」をピン留めします。</p>
+                                        <div class="screenshot-placeholder"><p>ここに拡張機能をピン留めする画面のキャプチャを挿入</p></div>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-5. Office/Teams -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-5">
+                                    <span class="flex-grow">2-5. Officeアプリ/Teamsのインストール</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>(1) ChromeでMicrosoft365にサインインし、「アプリをインストール」>「Microsoft 365 アプリ」を選択してインストールします。</p>
+                                        <div class="screenshot-placeholder"><p>ここにOfficeインストール画面のキャプチャを挿入</p></div>
+                                        <p>(2) <a href="https://www.microsoft.com/ja-jp/microsoft-teams/download-app" target="_blank" class="text-blue-600 hover:underline">公式サイト</a>からTeamsデスクトップアプリをダウンロードし、インストールします。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-6. 証明書のダウンロード -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-6">
+                                    <span class="flex-grow">2-6. TrustLogin証明書のダウンロード</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                       <p>Teamsを起動し、ステップ1でご自身のチャットにアップロードした証明書ファイル（例：Client Cert.zip）をダウンロードします。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-7. Utility -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-7">
+                                    <span class="flex-grow">2-7. 圧縮・解凍ソフト/PDFリーダーのインストール</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                       <p>1. <a href="https://forest.watch.impress.co.jp/library/software/lhaplus/" target="_blank" class="text-blue-600 hover:underline">Lhaplus</a>をインストールします。</p>
+                                       <p>2. <a href="https://get.adobe.com/jp/reader/" target="_blank" class="text-blue-600 hover:underline">Adobe Acrobat Reader</a>をインストールします。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-8. OneDrive -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-8">
+                                    <span class="flex-grow">2-8. OneDrive for businessのセットアップ</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>タスクバーの雲のアイコンをクリックし、Microsoft365アカウントでサインインします。画面の指示に従いセットアップを完了させてください。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-9. Outlook -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-9">
+                                    <span class="flex-grow">2-9. Outlookのセットアップ</span>
+                                </label>
+                                <div class="ml-8 mt-2 text-sm text-red-600">※基本的に入社時のみの作業です。PC入替時はデータが同期されるため不要です。</div>
+                            </div>
+                            <!-- 2-10. PowerBI -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-10">
+                                    <span class="flex-grow">2-10. PowerBIのインストール</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p><a href="https://www.microsoft.com/ja-jp/download/details.aspx?id=58494" target="_blank" class="text-blue-600 hover:underline">公式サイト</a>からPowerBI Desktopをダウンロードし、インストールします。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-11. TrustLogin -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-11">
+                                    <span class="flex-grow">2-11. TrustLoginのセットアップ</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>1. Chromeの設定から「証明書の管理」を開き、ステップ2-6でダウンロードしたTrustLoginの証明書ファイル（.pfx）をインポートします。その際、旧PCで設定したパスワードを入力します。</p>
+                                        <p>2. インポート完了後、Chromeの閲覧履歴データをすべて削除（キャッシュクリア）します。</p>
+                                        <p>3. <a href="https://portal.trustlogin.com" target="_blank" class="text-blue-600 hover:underline">TrustLoginポータル</a>にアクセスし、テナント名、アカウント名（メールアドレス）を入力してログインできることを確認します。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-12. Glugent Flow -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                     <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-12">
+                                    <span class="flex-grow">2-12. Glugent Flow サインイン</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p><a href="https://gluegent-workflow.appspot.com/" target="_blank" class="text-blue-600 hover:underline">Glugent Flow</a>にアクセスし、Microsoft365アカウントでサインインします。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-13. UAC -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-13">
+                                    <span class="flex-grow">2-13. ユーザーアカウント制御の設定</span>
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                         <p>(1) 「コントロールパネル＞ユーザーアカウント（2回選択）」を選択後、[ユーザーアカウント制御設定の変更]を押下します。</p>
+                                         <p>(2) ポップアップが表示されたら、[はい]を選択します。</p>
+                                         <p>(3) 設定が一番上の「常に通知する」になっていることを確認し、なっていなければ変更します。</p>
+                                         <div class="screenshot-placeholder"><p>ここに「ユーザーアカウント制御」設定画面のキャプチャを挿入</p></div>
+                                    </div>
+                                </details>
+                            </div>
+                            <!-- 2-14. MFクラウド -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-14">
+                                    <span class="flex-grow">2-14. MFクラウドのメールアドレス変更</span>
+                                </label>
+                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
+                            </div>
+                            <!-- 2-15. 複合機 -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-15">
+                                    <span class="flex-grow">2-15. 複合機の設定</span>
+                                </label>
+                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
+                            </div>
+                            <!-- 2-16. SEカレッジ -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-16">
+                                    <span class="flex-grow">2-16. SEカレッジのパスワード変更</span>
+                                </label>
+                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
+                            </div>
+                            <!-- 2-17. Slack -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-17">
+                                    <span class="flex-grow">2-17. Slackへのログイン</span>
+                                </label>
+                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ステップ3: 旧PCの初期化と返却 -->
+                    <section id="step3" class="bg-white shadow-md rounded-xl p-6">
+                        <h2 class="text-2xl font-bold text-purple-600 border-b-2 border-purple-200 pb-2 mb-4">ステップ3：旧PCの初期化と返却</h2>
+                        <p class="mb-6">新PCへのデータ移行と設定が完了したら、旧PCのデータを消去し、返却準備をします。</p>
+                        <div class="space-y-4">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                     <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-purple-600 focus:ring-purple-500 mr-3" data-task-id="step3-1">
+                                    3-1. Webデータ履歴の消去
+                                </label>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-purple-600 focus:ring-purple-500 mr-3" data-task-id="step3-2">
+                                    3-2. Cドライブ直下のファイル消去
+                                </label>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-purple-600 focus:ring-purple-500 mr-3" data-task-id="step3-3">
+                                    3-3. BitLockerのPIN初期化
+                                </label>
+                                <details class="text-sm ml-8 mt-2">
+                                    <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
+                                    <div class="mt-4 text-gray-700 space-y-4">
+                                        <p>(1) コントロールパネルを開き、「システムとセキュリティ」→「Bitlocker ドライブ暗号化」を選択します。</p>
+                                        <p>(2) 「PINの変更」を選択します。</p>
+                                        <p>(3) PINを「**000000**」に変更します。</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4 bg-yellow-50">
+                                <label class="flex items-center font-semibold text-lg cursor-pointer">
+                                     <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-purple-600 focus:ring-purple-500 mr-3" data-task-id="step3-4">
+                                    3-4. 旧PCのシャットダウンと報告
+                                </label>
+                                <p class="text-gray-600 mt-1 pl-8">上記作業が完了したらPCをシャットダウンし、所定の場所に返却します。その後、情報システム課へPC返却の旨と、管理台帳の更新を依頼してください。</p>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- ページトップへ戻るボタン -->
+    <a href="#top" id="to-top-button" title="トップへ戻る"
+        class="hidden fixed bottom-28 right-5 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </a>
+    
+    <!-- 進捗状況バー -->
+    <div id="progress-container" class="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm shadow-lg p-4 border-t border-gray-200">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex justify-between items-center mb-1">
+                <span class="font-bold text-gray-700">進捗状況</span>
+                <span id="progress-text" class="font-mono text-gray-600 text-sm">0 / 24</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.task-checkbox');
+            const progressText = document.getElementById('progress-text');
+            const progressBar = document.getElementById('progress-bar');
+            const toTopButton = document.getElementById('to-top-button');
+            const totalTasks = checkboxes.length;
+            const storageKey = 'pcReplacementProgress_v6';
+
+            // 1. 進捗を更新する関数
+            function updateProgress() {
+                const checkedTasks = document.querySelectorAll('.task-checkbox:checked').length;
+                progressText.textContent = `${checkedTasks} / ${totalTasks}`;
+                const percentage = totalTasks > 0 ? (checkedTasks / totalTasks) * 100 : 0;
+                progressBar.style.width = `${percentage}%`;
+            }
+
+            // 2. 進捗をlocalStorageに保存する関数
+            function saveProgress() {
+                const checkedIds = [];
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        checkedIds.push(checkbox.dataset.taskId);
+                    }
+                });
+                localStorage.setItem(storageKey, JSON.stringify(checkedIds));
+            }
+
+            // 3. localStorageから進捗を読み込む関数
+            function loadProgress() {
+                const savedProgress = JSON.parse(localStorage.getItem(storageKey));
+                if (Array.isArray(savedProgress)) {
+                    checkboxes.forEach(checkbox => {
+                        if (savedProgress.includes(checkbox.dataset.taskId)) {
+                            checkbox.checked = true;
+                        }
+                    });
+                }
+            }
+
+            // 4. 各チェックボックスにイベントリスナーを設定
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    updateProgress();
+                    saveProgress();
+                });
+            });
+
+            // 5. トップへ戻るボタンの表示制御
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    toTopButton.classList.remove('hidden');
+                } else {
+                    toTopButton.classList.add('hidden');
+                }
+            });
+
+            // 初期化処理
+            progressText.textContent = `0 / ${totalTasks}`;
+            loadProgress();
+            updateProgress();
+        });
+    </script>
+
+</body>
+</html>
