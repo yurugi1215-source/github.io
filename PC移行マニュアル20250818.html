@@ -42,20 +42,6 @@
         body {
             padding-bottom: 100px;
         }
-        .screenshot-placeholder {
-            border: 2px dashed #d1d5db;
-            border-radius: 0.5rem;
-            background-color: #f9fafb;
-            text-align: center;
-            color: #6b7280;
-            padding: 1rem;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            min-height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -141,16 +127,12 @@
                                 <details class="text-sm ml-8 mt-2">
                                     <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
                                     <div class="mt-4 text-gray-700 space-y-4">
-                                        <p>(1) 「Windowsの設定＞アカウント＞職場または学校にアクセスする」を選択して以下の画面を表示し、[+接続]を押下します。</p>
-                                        <div class="screenshot-placeholder"><p>ここに「職場または学校にアクセスする」画面のキャプチャを挿入</p></div>
-                                        <p>(2) [このデバイスをAzure Active Directoryに参加させる]を選択します。</p>
-                                        <div class="screenshot-placeholder"><p>ここに「職場または学校アカウントのセットアップ」画面のキャプチャを挿入</p></div>
-                                        <p>(3) Microsoft365アカウントのID/PWを入力しサインインします。（PC入替時はご自身で設定されているID/PW）</p>
+                                        <p>(1) 「Windowsの設定＞アカウント＞職場または学校にアクセスする＞接続」を選択します。</p>
+                                        <p>(2) 「このデバイスをMicrosoft Entra IDに参加させる」を選択します。<br><span class="text-red-600 font-bold">注意：上の入力フィールドからメールアドレスを入力しないこと。</span></p>
+                                        <p>(3) Microsoft365アカウントのメールアドレス/IDを入力しサインインします。（PC入替時はご自身で設定されているID/PW）</p>
                                         <p>(4) 表示された「接続先」「ユーザー名」を確認し、[参加する] を選択します。</p>
-                                        <div class="screenshot-placeholder"><p>ここに「組織への参加を確認」画面のキャプチャを挿入</p></div>
                                         <p>(5) [完了]を選択します。</p>
                                         <p>(6) 「職場または学校にアクセスする」の画面に、ご自身の組織アカウントが表示されていることを確認します。</p>
-                                        <div class="screenshot-placeholder"><p>ここにアカウントが追加された後の画面のキャプチャを挿入</p></div>
                                     </div>
                                 </details>
                             </div>
@@ -163,11 +145,9 @@
                                 <details class="text-sm ml-8 mt-2">
                                     <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
                                      <div class="mt-4 text-gray-700 space-y-4">
-                                        <p>(1) スタートメニューから現在設定されているアカウントを選択し、「・・・」⇒[Switch user]の順で押下します。</p>
-                                        <div class="screenshot-placeholder"><p>ここに「ユーザーの切り替え」画面のキャプチャを挿入</p></div>
-                                        <p>(2) 「他のユーザー」>「職場または学校アカウント」を選択し、自身のMS365のID/PWを入力します。</p>
-                                        <p>(3) ID/PWを入力後、PINの設定が求められるため、「英字と記号を含める」にチェックを入れて設定します。</p>
-                                        <div class="screenshot-placeholder"><p>ここに「PINのセットアップ」画面のキャプチャを挿入</p></div>
+                                        <p>(1) スタートメニューから現在設定されているアカウントを選択し、「...」⇒[Switch user]の順で押下します。</p>
+                                        <p>(2) 「他のユーザー」>「職場または学校アカウント」を選択し、自身のMS365のメールアドレス/PWを入力します。</p>
+                                        <p>(3) ID/PWを入力後、PINの設定が求められるため、「英字と記号を含める」にチェックを入れて設定します。（PC起動時に顔認証ができなかった際に入力するコードです。）</p>
                                     </div>
                                 </details>
                             </div>
@@ -200,12 +180,10 @@
                                     <div class="mt-4 text-gray-700 space-y-4">
                                         <p>(1) <a href="https://www.google.com/intl/ja_jp/chrome/" target="_blank" class="text-blue-600 hover:underline">公式サイト</a>からChromeをダウンロードし、インストールします。</p>
                                         <p>(2) 「設定 > 自動入力とパスワード > Googleパスワードマネージャー > 設定」で、「パスワードとパスキーを保存するか確認する」「パスキーを自動作成してすばやくログイン」「自動ログイン」をすべてオフにします。</p>
-                                        <div class="screenshot-placeholder"><p>ここにChromeのパスワード設定画面のキャプチャを挿入</p></div>
                                         <p>(3) Chromeウェブストアで「TrustLogin」を検索し、[Chromeに追加]します。</p>
                                         <p>(4) 同様に「Microsoft Single Sign On」を検索し、[Chromeに追加]します。</p>
                                         <p>(5) Chromeウェブストアで「Microsoft Defender Browser Protection」を表示し、[Chromeに追加]を選択しインストールします。</p>
                                         <p>(6) Chrome右上のパズルのピースのマーク（拡張機能）を選択し、「TrustLogin」、「Microsoft Single Sign On」、「Microsoft Defender」をピン留めします。</p>
-                                        <div class="screenshot-placeholder"><p>ここに拡張機能をピン留めする画面のキャプチャを挿入</p></div>
                                     </div>
                                 </details>
                             </div>
@@ -219,7 +197,6 @@
                                     <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
                                     <div class="mt-4 text-gray-700 space-y-4">
                                         <p>(1) ChromeでMicrosoft365にサインインし、「アプリをインストール」>「Microsoft 365 アプリ」を選択してインストールします。</p>
-                                        <div class="screenshot-placeholder"><p>ここにOfficeインストール画面のキャプチャを挿入</p></div>
                                         <p>(2) <a href="https://www.microsoft.com/ja-jp/microsoft-teams/download-app" target="_blank" class="text-blue-600 hover:underline">公式サイト</a>からTeamsデスクトップアプリをダウンロードし、インストールします。</p>
                                     </div>
                                 </details>
@@ -264,19 +241,11 @@
                                     </div>
                                 </details>
                             </div>
-                            <!-- 2-9. Outlook -->
+                            <!-- 2-9. PowerBI -->
                             <div class="border border-gray-200 rounded-lg p-4">
                                 <label class="flex items-center font-semibold text-lg cursor-pointer">
                                     <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-9">
-                                    <span class="flex-grow">2-9. Outlookのセットアップ</span>
-                                </label>
-                                <div class="ml-8 mt-2 text-sm text-red-600">※基本的に入社時のみの作業です。PC入替時はデータが同期されるため不要です。</div>
-                            </div>
-                            <!-- 2-10. PowerBI -->
-                            <div class="border border-gray-200 rounded-lg p-4">
-                                <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-10">
-                                    <span class="flex-grow">2-10. PowerBIのインストール</span>
+                                    <span class="flex-grow">2-9. PowerBIのインストール</span>
                                 </label>
                                 <details class="text-sm ml-8 mt-2">
                                     <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
@@ -285,11 +254,11 @@
                                     </div>
                                 </details>
                             </div>
-                            <!-- 2-11. TrustLogin -->
+                            <!-- 2-10. TrustLogin -->
                             <div class="border border-gray-200 rounded-lg p-4">
                                 <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-11">
-                                    <span class="flex-grow">2-11. TrustLoginのセットアップ</span>
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-10">
+                                    <span class="flex-grow">2-10. TrustLoginのセットアップ</span>
                                 </label>
                                 <details class="text-sm ml-8 mt-2">
                                     <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
@@ -300,24 +269,25 @@
                                     </div>
                                 </details>
                             </div>
-                            <!-- 2-12. Glugent Flow -->
+                            <!-- 2-11. Glugent Flow -->
                             <div class="border border-gray-200 rounded-lg p-4">
                                 <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                     <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-12">
-                                    <span class="flex-grow">2-12. Glugent Flow サインイン</span>
+                                     <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-11">
+                                    <span class="flex-grow">2-11. Glugent Flow サインイン</span>
                                 </label>
                                 <details class="text-sm ml-8 mt-2">
                                     <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
                                     <div class="mt-4 text-gray-700 space-y-4">
-                                        <p><a href="https://gluegent-workflow.appspot.com/" target="_blank" class="text-blue-600 hover:underline">Glugent Flow</a>にアクセスし、Microsoft365アカウントでサインインします。</p>
+                                        <p>1. <a href="https://gluegent-workflow.appspot.com/" target="_blank" class="text-blue-600 hover:underline">Glugent Flow</a>にアクセスし、Microsoft365アカウントでサインインします。</p>
+                                        <p>2. サインイン後、右上の歯車マーク＞設定＞Gluegent Flow Status View Chrome拡張を選択して、拡張機能に追加します。</p>
                                     </div>
                                 </details>
                             </div>
-                            <!-- 2-13. UAC -->
+                            <!-- 2-12. UAC -->
                             <div class="border border-gray-200 rounded-lg p-4">
                                 <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-13">
-                                    <span class="flex-grow">2-13. ユーザーアカウント制御の設定</span>
+                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-12">
+                                    <span class="flex-grow">2-12. ユーザーアカウント制御の設定</span>
                                 </label>
                                 <details class="text-sm ml-8 mt-2">
                                     <summary class="cursor-pointer font-medium text-blue-600 hover:text-blue-800">詳しい手順を表示</summary>
@@ -325,41 +295,8 @@
                                          <p>(1) 「コントロールパネル＞ユーザーアカウント（2回選択）」を選択後、[ユーザーアカウント制御設定の変更]を押下します。</p>
                                          <p>(2) ポップアップが表示されたら、[はい]を選択します。</p>
                                          <p>(3) 設定が一番上の「常に通知する」になっていることを確認し、なっていなければ変更します。</p>
-                                         <div class="screenshot-placeholder"><p>ここに「ユーザーアカウント制御」設定画面のキャプチャを挿入</p></div>
                                     </div>
                                 </details>
-                            </div>
-                            <!-- 2-14. MFクラウド -->
-                            <div class="border border-gray-200 rounded-lg p-4">
-                                <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-14">
-                                    <span class="flex-grow">2-14. MFクラウドのメールアドレス変更</span>
-                                </label>
-                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
-                            </div>
-                            <!-- 2-15. 複合機 -->
-                            <div class="border border-gray-200 rounded-lg p-4">
-                                <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-15">
-                                    <span class="flex-grow">2-15. 複合機の設定</span>
-                                </label>
-                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
-                            </div>
-                            <!-- 2-16. SEカレッジ -->
-                            <div class="border border-gray-200 rounded-lg p-4">
-                                <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-16">
-                                    <span class="flex-grow">2-16. SEカレッジのパスワード変更</span>
-                                </label>
-                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
-                            </div>
-                            <!-- 2-17. Slack -->
-                            <div class="border border-gray-200 rounded-lg p-4">
-                                <label class="flex items-center font-semibold text-lg cursor-pointer">
-                                    <input type="checkbox" class="task-checkbox h-5 w-5 rounded border-gray-400 text-green-600 focus:ring-green-500 mr-3 flex-shrink-0" data-task-id="step2-17">
-                                    <span class="flex-grow">2-17. Slackへのログイン</span>
-                                </label>
-                                <div class="ml-8 mt-2 text-sm text-red-600">※入社時のみの作業です。PC入替時は不要です。</div>
                             </div>
                         </div>
                     </section>
@@ -391,7 +328,7 @@
                                     <div class="mt-4 text-gray-700 space-y-4">
                                         <p>(1) コントロールパネルを開き、「システムとセキュリティ」→「Bitlocker ドライブ暗号化」を選択します。</p>
                                         <p>(2) 「PINの変更」を選択します。</p>
-                                        <p>(3) PINを「**000000**」に変更します。</p>
+                                        <p>(3) PINを「000000」に変更します。</p>
                                     </div>
                                 </details>
                             </div>
@@ -422,7 +359,7 @@
         <div class="container mx-auto max-w-6xl">
             <div class="flex justify-between items-center mb-1">
                 <span class="font-bold text-gray-700">進捗状況</span>
-                <span id="progress-text" class="font-mono text-gray-600 text-sm">0 / 24</span>
+                <span id="progress-text" class="font-mono text-gray-600 text-sm">0 / 20</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5">
                 <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
@@ -438,7 +375,7 @@
             const progressBar = document.getElementById('progress-bar');
             const toTopButton = document.getElementById('to-top-button');
             const totalTasks = checkboxes.length;
-            const storageKey = 'pcReplacementProgress_v6';
+            const storageKey = 'pcReplacementProgress_v7';
 
             // 1. 進捗を更新する関数
             function updateProgress() {
