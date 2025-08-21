@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>クイックウィン施策 選定支援SPA</title>
-    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Chosen Palette: ANA Corporate Blue -->
     <!-- Application Structure Plan: A single-page, guided decision-making SPA. The structure is designed to lead the user through a logical thought process: 1. Set the Goal (Purpose of this meeting), 2. Present Options (The three quick win categories), 3. Provide Decision Criteria (The evaluation matrix), 4. Guide the Discussion (Strategic viewpoints/discussion points), 5. Conclude with Next Steps. This funnel-like approach was chosen to move from broad options to a specific, well-justified conclusion, making it easy for the planning department to reach a consensus on selecting 'Knowledge Sharing Promotion'. -->
     <!-- Visualization & Content Choices: 
         - Quick Win Categories: Goal: Organize/Compare -> Viz: Structured HTML Cards -> Interaction: Clickable cards that reveal more details. -> Justification: Allows users to quickly grasp the options and then dive deeper into the one they are interested in, supporting a clean initial view.
-        - Evaluation Matrix: Goal: Compare -> Viz: Interactive HTML Table -> Interaction: Hovering over table cells could reveal tooltips with more detailed explanations of the ratings. -> Justification: A matrix is the most direct way to compare multiple options across multiple criteria. Interactivity adds layers of information without cluttering the UI.
+        - Evaluation Matrix: Goal: Compare -> Viz: Interactive HTML Table -> Justification: A matrix is the most direct way to compare multiple options across multiple criteria. Color-coding adds a powerful visual layer for quick analysis.
         - Discussion Points: Goal: Inform/Persuade -> Viz: Styled Text Blocks -> Justification: This section is purely for guiding the conversation, so clear, well-structured text is the most effective method.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
@@ -26,7 +26,6 @@
         .anasky-text { color: #009FFD; }
         .anasky-bg { background-color: #009FFD; }
         .dark-text { color: #242F40; }
-        .light-gray-bg { background-color: #E9ECEF; }
         .section-card {
             background-color: white;
             border-radius: 0.75rem;
@@ -40,7 +39,7 @@
             border: 2px solid #EAEAEA;
         }
         .quickwin-card:hover, .quickwin-card.selected {
-            border-color: #009FFD; /* ANA Sky Blue for selection */
+            border-color: #009FFD;
             transform: translateY(-5px);
             box-shadow: 0 8px 20px -4px rgb(0 0 0 / 0.1);
         }
@@ -168,38 +167,36 @@
             </div>
         </section>
 
-        <section id="next-steps" class="section-card">
-            <h2 class="text-2xl font-bold anablue-text mb-4">5. 今後の進め方：最初の1ヶ月で確実な成果を</h2>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                本日のご提案を具体的なアクションへと繋げるため、残りの契約期間（約1ヶ月）で達成すべき2つのゴールをご提案します。企画課の皆様と我々が一体となり、短期的な成果創出と中長期的な変革の準備を並行して進めます。
-            </p>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-sky-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-xl anasky-text mb-3">短期ゴール：クイックウィン施策の実行</h3>
-                    <p class="text-gray-700 mb-4">まず、本日選定したクイックウィン施策に企画課と我々で着手し、1ヶ月以内に目に見える成果を創出します。</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2 font-semibold">
-                        <li>実行チームの組成（企画課・コンサルタント）</li>
-                        <li>具体的な実行計画とKPIの策定</li>
-                        <li>施策の実行と効果測定</li>
-                    </ul>
-                     <div class="mt-4 bg-sky-100 p-3 rounded-lg border-l-4 border-sky-400">
-                        <p class="font-semibold text-sm anasky-text">私どものご支援</p>
-                        <p class="text-sm text-gray-700">プロジェクトマネジメント、技術的な実装支援、効果測定の仕組み作りまで、実行の全プロセスを伴走支援します。</p>
-                    </div>
+        <section id="action-plan" class="section-card">
+            <h2 class="text-2xl font-bold anablue-text mb-6">5. 実行計画案：「ナレッジ共有の促進」プロジェクト</h2>
+            <p class="text-lg text-gray-600 mb-6">もし「③ ナレッジ共有の促進」を選定した場合、残り約1ヶ月で具体的な成果を出すためのアクションプラン（たたき台）は以下の通りです。</p>
+            <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">Week 1：現状把握とスコープ定義</h3>
+                    <p class="text-gray-600"><strong>アクション：</strong>問い合わせ対応が多い部署へヒアリングし、「よくある質問」「探すのに時間がかかる情報」を特定。文書管理システム等の現状を分析し、対象範囲を決定します。</p>
+                    <p class="font-semibold text-sm text-gray-800 mt-2"><strong>ゴール：</strong>解決すべき「情報の非効率」を具体的に定義し、プロジェクトの対象範囲を明確にする。</p>
                 </div>
-                <div class="bg-blue-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-xl anablue-text mb-3">中長期ゴール：推進体制の具体化</h3>
-                    <p class="text-gray-700 mb-4">将来の大きな変革に向けて、土台となる推進体制の構築を並行して開始します。</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2 font-semibold">
-                        <li>DX推進室の役割・権限・人員構成の具体化</li>
-                        <li>大規模プロジェクト（基幹システム刷新等）の準備</li>
-                    </ul>
-                    <div class="mt-4 bg-blue-100 p-3 rounded-lg border-l-4 border-blue-400">
-                        <p class="font-semibold text-sm anablue-text">私どものご支援</p>
-                        <p class="text-sm text-gray-700">推進室の役割定義ワークショップの実施や、他社事例を基にした組織設計をご支援します。</p>
-                    </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">Week 2：プロトタイプ構築と情報整理</h3>
+                    <p class="text-gray-600"><strong>アクション：</strong>Googleサイト等を活用し、特定した質問への回答をまとめたシンプルなFAQサイトのプロトタイプを構築。関連資料をDriveに集約し、リンクを設定します。</p>
+                    <p class="font-semibold text-sm text-gray-800 mt-2"><strong>ゴール：</strong>実際に触れる「解決策のプロトタイプ」を完成させる。</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">3</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">Week 3：テスト運用と効果測定</h3>
+                    <p class="text-gray-600"><strong>アクション：</strong>関係部署の数名にプロトタイプを実際に利用してもらい、フィードバックを収集。特定の情報を探す時間がどの程度短縮されたかを測定します。</p>
+                    <p class="font-semibold text-sm text-gray-800 mt-2"><strong>ゴール：</strong>DXによる改善効果を定量的に示し、次のステップ（本格導入）への合意を形成する。</p>
                 </div>
             </div>
+        </section>
+
+        <section id="next-steps" class="section-card">
+            <h2 class="text-2xl font-bold anablue-text mb-4">6. 今後の進め方</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                本日のディスカッションを踏まえ、DX推進の土台作りとして、また全社的な成功体験を創出する第一歩として、最初に着手すべきクイックウィンを決定したいと考えております。選定後、速やかに企画課の皆様と我々で実行チームを組成し、具体的な実行計画の策定に着手します。
+            </p>
         </section>
 
     </main>
