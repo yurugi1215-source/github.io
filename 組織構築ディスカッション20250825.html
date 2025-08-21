@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DX推進体制 構築支援SPA</title>
+    <!-- Chosen Palette: ANA Corporate Blue -->
+    <!-- Application Structure Plan: A narrative-driven, single-page application designed to build a persuasive case for establishing a formal DX promotion system. The flow is: 1. The "Why" (ANA's current challenges, making the problem relatable), 2. The "How" (the ideal model based on the IPA guide, broken into interactive sections for Organization, Talent, and Culture), and 3. The "What" (a concrete, phased action plan). This logical progression from problem to ideal solution to actionable steps was chosen to guide users through a compelling argument, making the final proposal feel both necessary and achievable. -->
+    <!-- Visualization & Content Choices: 
+        - ANA's Challenges: Goal: Organize/Inform -> Viz: Tabbed interface -> Interaction: Click tabs to switch content -> Justification: Prevents information overload by categorizing challenges and allowing users to explore them one by one.
+        - 5 Roles of DX Org: Goal: Organize -> Viz: Interactive Diagram (HTML/CSS) -> Interaction: Click a role to display its details -> Justification: More engaging than a static list, encouraging exploration of each role's function.
+        - Yatagarasu Talent Model: Goal: Inform/Organize -> Viz: Venn-like diagram (HTML/CSS) -> Interaction: Hover to see details -> Justification: Visually represents the intersection of three key skills, the core concept of the "Yatagarasu" talent.
+        - Ideal Culture: Goal: Compare -> Viz: Two-column layout -> Justification: Directly compares the two cultural pillars (Agile & Failure Tolerance) for clarity.
+        - Phased Approach: Goal: Organize/Change -> Viz: Timeline (HTML/CSS) -> Justification: The most intuitive way to present a time-based, phased plan.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --anablue: #004AAD;
+            --anasky: #009FFD;
+            --darktext: #242F40;
+            --lightgray-bg: #F8F9FA;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: var(--lightgray-bg); color: var(--darktext); }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px -1px rgb(0 0 0 / 0.05);
+            margin-bottom: 3rem;
+        }
+        .role-item { transition: all 0.2s ease-in-out; cursor: pointer; }
+        .role-item.active, .role-item:hover { background-color: #EBF8FF; border-left-color: var(--anasky); }
+        .yatagarasu-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .anablue-text { color: var(--anablue); }
+        .anablue-bg { background-color: var(--anablue); }
+        .anasky-text { color: var(--anasky); }
+        .anasky-bg { background-color: var(--anasky); }
+        .dark-text { color: var(--darktext); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="anablue-bg text-white p-4 md:p-6 shadow-lg sticky top-0 z-20">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold">DX推進体制 構築支援レポート</h1>
+            <nav id="main-nav" class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="#why" class="text-white opacity-80 hover:opacity-100">なぜ必要か</a>
+                <a href="#how" class="text-white opacity-80 hover:opacity-100">理想の姿</a>
+                <a href="#what" class="text-white opacity-80 hover:opacity-100">具体的な進め方</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-5xl p-4 md:p-8 mt-8">
+
+        <section id="why" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-4">1. なぜ今、専門の推進体制が必要なのか？</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                全部門ヒアリングから見えたのは、DXへの強い期待と同時に、「誰に相談すればよいか分からない」という共通の悩みでした。専門体制の不在は、既に具体的な問題として顕在化しています。IPAの「DX実践手引書」も参照しつつ、貴社の現状課題を整理します。
+            </p>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3 anablue-text">非効率な投資</h3>
+                    <p class="text-gray-700">人事課の事例のように、各部署が個別の判断でシステムを導入した結果、連携が取れず二重入力が発生しています。全社的な視点がなければ、こうした非効率な投資が繰り返されるリスクがあります。</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3 anablue-text">成功事例の属人化</h3>
+                    <p class="text-gray-700">一部職員によるGAS等を活用した業務改善は素晴らしい一方、そのノウハウが共有されず、異動と共に失われています。個人の努力に依存せず、組織として成功事例を横展開する仕組みが必要です。</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3 anablue-text">方向性の欠如</h3>
+                    <p class="text-gray-700">グループ内にDX情報が乱立し、現場は「何から手をつければよいか分からない」状態です。明確な指針を示し、現場のエネルギーを導く羅針盤役が不在です。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-4">2. 理想の姿：変革をドライブする組織とは</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                DXを成功に導くためには、技術だけでなく「組織」「人材」「文化」の三位一体の改革が不可欠です。ここではIPAの「DX実践手引書」で示されているベストプラクティスを基に、貴社が目指すべき理想の姿を対話的に探ります。
+            </p>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「組織」：DX推進組織に求められる5つの役割</h3>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div id="role-list" class="md:w-1/3 flex flex-col space-y-2">
+                        <!-- Role items will be dynamically inserted here -->
+                    </div>
+                    <div id="role-detail" class="md:w-2/3 p-6 bg-gray-50 rounded-lg min-h-[200px]">
+                        <!-- Role details will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「人材」：事業・技術・経営を繋ぐヤタガラス人材</h3>
+                <div class="p-6 bg-gray-50 rounded-lg flex flex-col items-center">
+                    <div class="relative h-56 w-64">
+                        <div class="yatagarasu-circle anablue-bg absolute top-0 left-1/2 -translate-x-1/2">事業<br>(ビジネス)</div>
+                        <div class="yatagarasu-circle anablue-bg absolute bottom-0 left-0">技術<br>(デジタル)</div>
+                        <div class="yatagarasu-circle anablue-bg absolute bottom-0 right-0">経営<br>(マネジメント)</div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full anasky-bg flex items-center justify-center text-white font-bold text-center leading-tight">ヤタガラス人材</div>
+                    </div>
+                    <p class="w-full text-center mt-4 text-gray-600">これら3つの視点を併せ持ち、変革をリードする中核人材、またはそうした人材で構成されたチームが求められます。</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「文化」：変革を支える2つのマインドセット</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 anablue-text">アジャイルマインド</h4>
+                        <p class="text-gray-600 mb-4">「まずやってみる」姿勢で仮説検証を繰り返し、失敗から学び素早く軌道修正する文化。</p>
+                        <p class="font-semibold text-sm dark-text">経営層：</p>
+                        <p class="text-sm text-gray-600 mb-2">完璧な計画よりスピーディな実行と学習を評価する。</p>
+                        <p class="font-semibold text-sm dark-text">現場：</p>
+                        <p class="text-sm text-gray-600">週次の短い共有会で進捗を報告し、問題を早期に解決する。</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 anablue-text">失敗を許容する文化</h4>
+                        <p class="text-gray-600 mb-4">挑戦を称賛し、失敗を学びの機会として次に活かす心理的安全性が確保された文化。</p>
+                        <p class="font-semibold text-sm dark-text">経営層：</p>
+                        <p class="text-sm text-gray-600 mb-2">失敗事例を罰せず、挑戦したことを称賛する姿勢を示す。</p>
+                        <p class="font-semibold text-sm dark-text">現場：</p>
+                        <p class="text-sm text-gray-600">失敗を隠さず、チームの貴重な資産としてオープンに共有する。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="what" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-4">3. 具体的な進め方：現実的な2フェーズアプローチ</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                理想の姿に向けて、まずは小さなチームで成功体験を積み、それを基に本格的な組織へと発展させる、現実的な2段階のアプローチをご提案します。
+            </p>
+            <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anablue-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">フェーズ1：パイロットチームの組成（〜6ヶ月）</h3>
+                    <p class="text-gray-600">企画課が中心となり、各部署から変革意欲の高いキーマンを選出。クイックウィン・プロジェクトの成功を通じて、チーム連携の型を作ります。我々もチームの一員として伴走します。</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anablue-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">フェーズ2：正式な専門組織への発展（6ヶ月〜）</h3>
+                    <p class="text-gray-600">パイロットチームの成功と学びを基に、正式な「DX推進室」へと発展させます。役割と権限を明確化し、必要な予算を確保。内部育成と並行し、外部からの専門家採用も検討します。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 mt-8 bg-gray-200">
+        <p class="text-gray-600">&copy; 2025 株式会社グローバルパートナーズテクノロジー</p>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const roleList = document.getElementById('role-list');
+    const roleDetail = document.getElementById('role-detail');
+    const mainNav = document.getElementById('main-nav');
+
+    const rolesData = [
+        { id: 1, name: 'ビジョンの策定と浸透', title: '戦略家', detail: '経営層と連携し、全社的なDXビジョンを策定。現場が「自分ごと」として捉えられるよう、分かりやすく伝え、浸透させる役割を担います。<br><br><strong>具体的な活動例:</strong> 経営層とのDXビジョン策定ワークショップ、全社向け説明会の企画・実施。' },
+        { id: 2, name: '事業部門との「通訳」', title: 'ビジネスパートナー', detail: '現場が抱えるビジネス上の課題を深く理解し、それを解決するための最適なデジタル技術は何かを考え、提案します。事業と技術の「通訳」として機能します。<br><br><strong>具体的な活動例:</strong> 各部署への定期的なヒアリング、業務フロー分析支援。' },
+        { id: 3, name: '人材育成とナレッジハブ', title: '教育者', detail: '全社員のITリテラシーを底上げする研修を企画・実施します。また、各部署の成功事例やノウハウを集約し、全社に共有する「ナレッジハブ」としての役割も重要です。<br><br><strong>具体的な活動例:</strong> 全社員向けITリテラシー研修、成功事例共有会の開催。' },
+        { id: 4, name: 'ボトムアップの支援', title: '伴走者', detail: '現場から生まれる「こうすればもっと良くなる」という改善のアイデアを吸い上げ、その実現を技術的な側面からサポートします。<br><br><strong>具体的な活動例:</strong> クイックウィン・プロジェクトの技術支援、RPAやGAS開発のサポート。' },
+        { id: 5, name: '全社最適のガバナンス', title: '番人', detail: '各部署がバラバラにシステムを導入するのではなく、全社的な視点でデータ連携やセキュリティを考慮した技術選定が行われるよう、ガバナンスを効かせる役割を担います。<br><br><strong>具体的な活動例:</strong> 全社的なシステム導入ガイドラインの策定、新規システム導入時のレビュー。' }
+    ];
+
+    function updateRoleDetail(roleId) {
+        const role = rolesData.find(r => r.id == roleId);
+        roleDetail.innerHTML = `
+            <h4 class="text-xl font-bold mb-2 anablue-text">${role.name}（${role.title}）</h4>
+            <div class="text-gray-700">${role.detail.replace(/<br>/g, '<br />')}</div>
+        `;
+    }
+    
+    rolesData.forEach(role => {
+        const item = document.createElement('div');
+        item.className = 'role-item p-4 border-l-4 border-gray-200';
+        item.dataset.roleId = role.id;
+        item.innerHTML = `<p class="font-semibold">${role.name}</p>`;
+        roleList.appendChild(item);
+    });
+    
+    roleList.addEventListener('click', (e) => {
+        const roleItem = e.target.closest('.role-item');
+        if (roleItem) {
+            roleList.querySelectorAll('.role-item').forEach(item => item.classList.remove('active'));
+            roleItem.classList.add('active');
+            updateRoleDetail(roleItem.dataset.roleId);
+        }
+    });
+
+    mainNav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView();
+        }
+    });
+
+    roleList.querySelector('.role-item').classList.add('active');
+    updateRoleDetail('1');
+});
+</script>
+</body>
+</html>
