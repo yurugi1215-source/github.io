@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイックウィン施策 選定支援SPA</title>
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: A single-page, guided decision-making SPA. The structure is designed to lead the user through a logical thought process: 1. Set the Goal (Purpose of this meeting), 2. Present Options (The three quick win categories), 3. Provide Decision Criteria (The evaluation matrix), 4. Guide the Discussion (Strategic viewpoints/discussion points), 5. Conclude with Next Steps. This funnel-like approach was chosen to move from broad options to a specific, well-justified conclusion, making it easy for the planning department to reach a consensus on selecting 'Knowledge Sharing Promotion'. -->
+    <!-- Visualization & Content Choices: 
+        - Quick Win Categories: Goal: Organize/Compare -> Viz: Structured HTML Cards -> Interaction: Clickable cards that reveal more details. -> Justification: Allows users to quickly grasp the options and then dive deeper into the one they are interested in, supporting a clean initial view.
+        - Evaluation Matrix: Goal: Compare -> Viz: Interactive HTML Table -> Interaction: Hovering over table cells could reveal tooltips with more detailed explanations of the ratings. -> Justification: A matrix is the most direct way to compare multiple options across multiple criteria. Interactivity adds layers of information without cluttering the UI.
+        - Discussion Points: Goal: Inform/Persuade -> Viz: Styled Text Blocks -> Justification: This section is purely for guiding the conversation, so clear, well-structured text is the most effective method.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .anablue-text { color: #004AAD; }
+        .anablue-bg { background-color: #004AAD; }
+        .anasky-text { color: #009FFD; }
+        .anasky-bg { background-color: #009FFD; }
+        .dark-text { color: #242F40; }
+        .light-gray-bg { background-color: #E9ECEF; }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px -1px rgb(0 0 0 / 0.05);
+            margin-bottom: 3rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .quickwin-card {
+            cursor: pointer;
+            border: 2px solid #EAEAEA;
+        }
+        .quickwin-card:hover, .quickwin-card.selected {
+            border-color: #009FFD; /* ANA Sky Blue for selection */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px -4px rgb(0 0 0 / 0.1);
+        }
+        .matrix-table th, .matrix-table td {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #EAEAEA;
+        }
+        .matrix-table th {
+            background-color: #F7F7F7;
+        }
+        .highlight-high {
+            background-color: #D1FAE5;
+            color: #065F46;
+            font-weight: bold;
+        }
+        .highlight-mid {
+            background-color: #FEF3C7;
+            color: #92400E;
+            font-weight: bold;
+        }
+        .highlight-low {
+            background-color: #FEE2E2;
+            color: #991B1B;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="anablue-bg text-white p-4 md:p-6 shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto max-w-5xl">
+            <h1 class="text-2xl md:text-3xl font-bold">クイックウィン施策 選定会議</h1>
+            <p class="mt-1 text-base opacity-90">DX推進の確実な第一歩を踏み出すために</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-5xl p-4 md:p-8 mt-8">
+
+        <section id="purpose" class="section-card">
+            <h2 class="text-2xl font-bold anablue-text mb-4">1. 本日の目的</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                この会議の目的は、ANA沖縄空港のDX推進における最初の一歩として、短期的に大きな成果が期待できる「クイックウィン」施策を1つ選定することです。全社ヒアリングで明らかになった課題の中から、特に「インパクトが大きく、かつ実現性が高い」3つのテーマを候補としました。本日の議論を通じて、最も戦略的な一手は何かを決定します。
+            </p>
+        </section>
+
+        <section id="options" class="section-card">
+            <h2 class="text-2xl font-bold anablue-text mb-6">2. クイックウィン候補の3つのカテゴリ</h2>
+            <div id="quickwin-options" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="section-card quickwin-card p-6" data-option="1">
+                    <h3 class="font-bold text-xl dark-text">① 定型業務の自動化</h3>
+                    <p class="text-gray-600 mt-2">各部署に散在する手作業や転記作業をRPAやGASで自動化し、工数削減とヒューマンエラー撲滅を目指します。</p>
+                </div>
+                <div class="section-card quickwin-card p-6" data-option="2">
+                    <h3 class="font-bold text-xl dark-text">② ペーパーレス化の推進</h3>
+                    <p class="text-gray-600 mt-2">現場業務で多用される紙媒体を、GrabPad等を活用して電子化し、リアルタイムな情報共有を実現します。</p>
+                </div>
+                <div class="section-card quickwin-card p-6" data-option="3">
+                    <h3 class="font-bold text-xl dark-text">③ ナレッジ共有の促進</h3>
+                    <p class="text-gray-600 mt-2">属人化している情報を組織の共有資産に変え、問い合わせ対応の工数を削減し、誰もが必要な情報にアクセスできる環境を整備します。</p>
+                </div>
+            </div>
+            <div id="option-details" class="mt-6 p-6 bg-gray-50 rounded-lg hidden">
+                <h4 class="font-bold text-lg dark-text mb-2">主な該当課題：</h4>
+                <p id="detail-text" class="text-gray-600"></p>
+            </div>
+        </section>
+
+        <section id="matrix" class="section-card">
+            <h2 class="text-2xl font-bold anablue-text mb-6">3. 選定のための評価マトリクス</h2>
+            <p class="text-lg text-gray-600 mb-6">各カテゴリを4つの評価軸で客観的に評価し、どの施策が最初の一歩として最も効果的かを検討します。</p>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse matrix-table">
+                    <thead>
+                        <tr>
+                            <th class="w-1/5">カテゴリ</th>
+                            <th>① 業務インパクト<br><span class="text-sm font-normal">(工数削減, 品質向上)</span></th>
+                            <th>② 実現の容易性<br><span class="text-sm font-normal">(技術的難易度, 関係部署)</span></th>
+                            <th>③ 全社への波及効果<br><span class="text-sm font-normal">(横展開のしやすさ)</span></th>
+                            <th>④ 成果の可視性<br><span class="text-sm font-normal">(従業員が変化を実感しやすいか)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">① 定型業務の自動化</td>
+                            <td class="highlight-high">高</td>
+                            <td class="highlight-low">低</td>
+                            <td class="highlight-high">高</td>
+                            <td class="highlight-low">低</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">② ペーパーレス化の推進</td>
+                            <td class="highlight-mid">中</td>
+                            <td class="highlight-high">高</td>
+                            <td class="highlight-mid">中</td>
+                            <td class="highlight-high">高</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">③ ナレッジ共有の促進</td>
+                            <td class="highlight-high">高</td>
+                            <td class="highlight-high">高</td>
+                            <td class="highlight-high">高</td>
+                            <td class="highlight-high">高</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="discussion" class="section-card">
+            <h2 class="text-2xl font-bold anablue-text mb-6">4. 論点と我々の見解</h2>
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-300">
+                    <h3 class="font-semibold text-lg dark-text">論点①：DX推進の「土台」を築く施策はどれか？</h3>
+                    <p class="mt-1 text-gray-700">将来のシステム刷新や自動化を見据えた際、まず「情報がどこにあるか」を整備する<strong class="anablue-text">「③ ナレッジ共有の促進」</strong>は、全てのDX施策の基礎となる重要な一歩です。</p>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-300">
+                    <h3 class="font-semibold text-lg dark-text">論点②：全社員が「DXの効果」を最も早く実感できる施策はどれか？</h3>
+                    <p class="mt-1 text-gray-700">「情報を探す」という行為は、役職や部署を問わず全ての従業員が毎日行っています。この時間が短縮される<strong class="anablue-text">「③ ナレッジ共有の促進」</strong>は、最も多くの人が効果を実感しやすい施策と言えます。</p>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-300">
+                    <h3 class="font-semibold text-lg dark-text">論点③：なぜ「自動化」からではないのか？</h3>
+                    <p class="mt-1 text-gray-700">「① 定型業務の自動化」は大きなインパクトが期待できますが、対象業務の選定や開発には専門知識が必要で時間を要します。まずは<strong class="anablue-text">情報のありかを整備（③）</strong>し、その上で自動化対象を検討する方が、より効果的かつスムーズです。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-steps" class="section-card">
+            <h2 class="text-2xl font-bold anablue-text mb-4">5. 今後の進め方：最初の1ヶ月で確実な成果を</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                本日のご提案を具体的なアクションへと繋げるため、残りの契約期間（約1ヶ月）で達成すべき2つのゴールをご提案します。企画課の皆様と我々が一体となり、短期的な成果創出と中長期的な変革の準備を並行して進めます。
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-sky-50 p-6 rounded-lg">
+                    <h3 class="font-bold text-xl anasky-text mb-3">短期ゴール：クイックウィン施策の実行</h3>
+                    <p class="text-gray-700 mb-4">まず、本日選定したクイックウィン施策に企画課と我々で着手し、1ヶ月以内に目に見える成果を創出します。</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2 font-semibold">
+                        <li>実行チームの組成（企画課・コンサルタント）</li>
+                        <li>具体的な実行計画とKPIの策定</li>
+                        <li>施策の実行と効果測定</li>
+                    </ul>
+                     <div class="mt-4 bg-sky-100 p-3 rounded-lg border-l-4 border-sky-400">
+                        <p class="font-semibold text-sm anasky-text">私どものご支援</p>
+                        <p class="text-sm text-gray-700">プロジェクトマネジメント、技術的な実装支援、効果測定の仕組み作りまで、実行の全プロセスを伴走支援します。</p>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="font-bold text-xl anablue-text mb-3">中長期ゴール：推進体制の具体化</h3>
+                    <p class="text-gray-700 mb-4">将来の大きな変革に向けて、土台となる推進体制の構築を並行して開始します。</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2 font-semibold">
+                        <li>DX推進室の役割・権限・人員構成の具体化</li>
+                        <li>大規模プロジェクト（基幹システム刷新等）の準備</li>
+                    </ul>
+                    <div class="mt-4 bg-blue-100 p-3 rounded-lg border-l-4 border-blue-400">
+                        <p class="font-semibold text-sm anablue-text">私どものご支援</p>
+                        <p class="text-sm text-gray-700">推進室の役割定義ワークショップの実施や、他社事例を基にした組織設計をご支援します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 mt-8 bg-gray-200">
+        <p class="text-gray-500">&copy; 2025 株式会社グローバルパートナーズテクノロジー</p>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const quickwinOptionsContainer = document.getElementById('quickwin-options');
+    const optionDetailsContainer = document.getElementById('option-details');
+    const detailTextElement = document.getElementById('detail-text');
+
+    const detailsData = {
+        '1': '総務の入域パス管理、オペレーションの燃料入力、人事の定期昇級業務など。',
+        '2': 'LMCシート、手荷物引き継ぎ書類、各種業務チェックリストなど。',
+        '3': 'FAQサイトの整備、文書管理システム（リーブス）の活用徹底、Google Driveのルール整備など。'
+    };
+
+    quickwinOptionsContainer.addEventListener('click', function(e) {
+        const card = e.target.closest('.quickwin-card');
+        if (!card) return;
+
+        const allCards = quickwinOptionsContainer.querySelectorAll('.quickwin-card');
+        const optionId = card.dataset.option;
+
+        if (card.classList.contains('selected')) {
+            card.classList.remove('selected');
+            optionDetailsContainer.classList.add('hidden');
+        } else {
+            allCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            
+            detailTextElement.textContent = detailsData[optionId];
+            optionDetailsContainer.classList.remove('hidden');
+        }
+    });
+});
+</script>
+</body>
+</html>
