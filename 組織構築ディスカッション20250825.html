@@ -53,6 +53,12 @@
         .anasky-text { color: var(--anasky); }
         .anasky-bg { background-color: var(--anasky); }
         .dark-text { color: var(--darktext); }
+        .details-marker {
+            transition: transform 0.2s;
+        }
+        details[open] .details-marker {
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -94,7 +100,7 @@
         <section id="how" class="section-card">
             <h2 class="text-3xl font-bold anablue-text mb-4">2. 理想の姿：変革をドライブする組織とは</h2>
             <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                DXを成功に導くためには、技術だけでなく「組織」「人材」「文化」の三位一体の改革が不可欠です。ここではIPAの「DX実践手引書」で示されているベストプラクティスを基に、貴社が目指すべき理想の姿を対話的に探ります。
+                DXを成功に導くためには、技術だけでなく「組織」「人材」「文化」「技術アプローチ」の改革が不可欠です。ここではIPAの「DX実践手引書」で示されているベストプラクティスを基に、貴社が目指すべき理想の姿と現状のギャップを探ります。
             </p>
             
             <div class="mb-12">
@@ -110,38 +116,88 @@
             </div>
 
             <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「人材」：事業・技術・経営を繋ぐヤタガラス人材</h3>
-                <div class="p-6 bg-gray-50 rounded-lg flex flex-col items-center">
-                    <div class="relative h-56 w-64">
-                        <div class="yatagarasu-circle anablue-bg absolute top-0 left-1/2 -translate-x-1/2">事業<br>(ビジネス)</div>
-                        <div class="yatagarasu-circle anablue-bg absolute bottom-0 left-0">技術<br>(デジタル)</div>
-                        <div class="yatagarasu-circle anablue-bg absolute bottom-0 right-0">経営<br>(マネジメント)</div>
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full anasky-bg flex items-center justify-center text-white font-bold text-center leading-tight">ヤタガラス人材</div>
+                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「人材」：変革を担う人材の確保と育成</h3>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="relative h-56 w-64 flex-shrink-0">
+                            <div class="yatagarasu-circle anablue-bg absolute top-0 left-1/2 -translate-x-1/2">事業<br>(ビジネス)</div>
+                            <div class="yatagarasu-circle anablue-bg absolute bottom-0 left-0">技術<br>(デジタル)</div>
+                            <div class="yatagarasu-circle anablue-bg absolute bottom-0 right-0">経営<br>(マネジメント)</div>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full anasky-bg flex items-center justify-center text-white font-bold text-center leading-tight">ヤタガラス人材</div>
+                        </div>
+                        <div>
+                             <h4 class="text-xl font-bold mb-2 anablue-text">「ヤタガラス人材」の育成</h4>
+                             <p class="text-gray-600">プログラミング等の技術知識だけでなく、事業と組織を深く理解し、デジタルを組み合わせて未来を描ける「両利き人材」、特に事業・技術・経営の3つの観点に通じる「ヤタガラス人材」がDX推進の中心となります。</p>
+                        </div>
                     </div>
-                    <p class="w-full text-center mt-4 text-gray-600">これら3つの視点を併せ持ち、変革をリードする中核人材、またはそうした人材で構成されたチームが求められます。</p>
+                    <div class="mt-6 border-t pt-6">
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                <span>具体的な人材育成アプローチ</span>
+                                <span class="details-marker transform group-open:rotate-90 transition-transform duration-200">▶</span>
+                            </summary>
+                            <div class="mt-4 text-gray-600 space-y-2 text-sm">
+                                <p><strong>DXスキルの確保・育成：</strong>社内にDXスキルを持つ人材の確保・育成が喫緊の課題です。既存社員の育成に加え、外部からの専門家招聘も検討する必要があります。</p>
+                                <p><strong>社内ローテーションと経験の機会提供：</strong>組織内で人事ローテーション制度を活用し、事業現場の社員をDXプロジェクトに巻き込むことで、スキルセットを意図的に身につけさせることができます。</p>
+                                <p><strong>キャリアパスとの連携：</strong>デジタル人材の育成はキャリアパスと紐付け、業務を知る情熱的な人材にIT技術教育を受けさせ、両方の会話ができる人材を育てるべきです。</p>
+                                <p><strong>全社員のITリテラシー向上：</strong>全ての社員がデジタル技術を活用できるようなITリテラシー教育が必要です。</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「文化」：変革を支えるマインドセット</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="p-6 bg-gray-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 anablue-text">ビジョン共有とリーダーシップ</h4>
+                        <p class="text-gray-600">DXの起点は、組織の将来像・ビジョンを経営層から現場まで徹底的に議論し、共有することです。経営層の強い意志とコミットメントが不可欠です。</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 anablue-text">現場尊重と連携体制</h4>
+                        <p class="text-gray-600">現場の経験や課題から生まれたアイデアを最大限活用し、部門横断的な協力体制と、ビジネスと技術をつなぐ「通訳」となる役割が求められます。</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 anablue-text">アジャイルマインド</h4>
+                        <p class="text-gray-600">「まずやってみる」姿勢で仮説検証を繰り返し、失敗から学び素早く軌道修正する文化を醸成します。</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 anablue-text">失敗を許容する文化</h4>
+                        <p class="text-gray-600">挑戦を称賛し、失敗を学びの機会として次に活かす心理的安全性が確保された文化を育みます。</p>
+                    </div>
                 </div>
             </div>
 
             <div>
-                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「文化」：変革を支える2つのマインドセット</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2 anablue-text">アジャイルマインド</h4>
-                        <p class="text-gray-600 mb-4">「まずやってみる」姿勢で仮説検証を繰り返し、失敗から学び素早く軌道修正する文化。</p>
-                        <p class="font-semibold text-sm dark-text">経営層：</p>
-                        <p class="text-sm text-gray-600 mb-2">完璧な計画よりスピーディな実行と学習を評価する。</p>
-                        <p class="font-semibold text-sm dark-text">現場：</p>
-                        <p class="text-sm text-gray-600">週次の短い共有会で進捗を報告し、問題を早期に解決する。</p>
+                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「技術」：DXを実現するITシステムのあるべき姿</h3>
+                <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                    技術的アプローチは、人材という土台の上に、安全で柔軟なITインフラを構築し、その上で効率的かつ高度な業務基盤を実現していくという階層構造で考えることが重要です。
+                </p>
+                <div class="p-6 bg-gray-50 rounded-lg flex flex-col items-center">
+                    <div class="w-full max-w-md space-y-1 text-center font-bold text-white">
+                        <div class="p-4 bg-sky-500 rounded-t-lg text-lg w-1/2 mx-auto">デジタル業務基盤</div>
+                        <div class="p-4 bg-sky-600 text-lg w-2/3 mx-auto">ITインフラ/情報セキュリティ</div>
+                        <div class="p-4 anablue-bg rounded-b-lg text-lg w-full">デジタル人財育成</div>
                     </div>
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2 anablue-text">失敗を許容する文化</h4>
-                        <p class="text-gray-600 mb-4">挑戦を称賛し、失敗を学びの機会として次に活かす心理的安全性が確保された文化。</p>
-                        <p class="font-semibold text-sm dark-text">経営層：</p>
-                        <p class="text-sm text-gray-600 mb-2">失敗事例を罰せず、挑戦したことを称賛する姿勢を示す。</p>
-                        <p class="font-semibold text-sm dark-text">現場：</p>
-                        <p class="text-sm text-gray-600">失敗を隠さず、チームの貴重な資産としてオープンに共有する。</p>
-                    </div>
+                    <p class="w-full text-center mt-4 text-gray-600">人材という土台の上に、安全なインフラを築き、最終的に業務を変革するアプリケーションが機能します。</p>
                 </div>
+
+                 <div class="mt-6 border-t pt-6">
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                <span>具体的なデジタル技術の活用例</span>
+                                <span class="details-marker transform group-open:rotate-90 transition-transform duration-200">▶</span>
+                            </summary>
+                            <div class="mt-4 text-gray-600 space-y-2 text-sm">
+                                <p><strong>RPA・GAS：</strong>定型的なPC作業やメール処理の自動化に活用します。</p>
+                                <p><strong>Google Workspace：</strong>Googleフォームを活用した申請書や報告書の自動生成、スプレッドシートによるデータ管理などが進められています。</p>
+                                <p><strong>AI：</strong>インシデント報告書の整理整頓、専門業務の高度化、教育レベルの平準化、危険物確認支援などに活用が期待されます。</p>
+                                <p><strong>IoT：</strong>GPSでの車両位置把握など、現場のデータを収集・分析し、作業効率化や高度化に生かします。</p>
+                                <p><strong>GrabPad：</strong>ペーパーレス化の推進や現場作業の効率化に活用します。</p>
+                            </div>
+                        </details>
+                    </div>
             </div>
         </section>
 
@@ -177,18 +233,50 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainNav = document.getElementById('main-nav');
 
     const rolesData = [
-        { id: 1, name: 'ビジョンの策定と浸透', title: '戦略家', detail: '経営層と連携し、全社的なDXビジョンを策定。現場が「自分ごと」として捉えられるよう、分かりやすく伝え、浸透させる役割を担います。<br><br><strong>具体的な活動例:</strong> 経営層とのDXビジョン策定ワークショップ、全社向け説明会の企画・実施。' },
-        { id: 2, name: '事業部門との「通訳」', title: 'ビジネスパートナー', detail: '現場が抱えるビジネス上の課題を深く理解し、それを解決するための最適なデジタル技術は何かを考え、提案します。事業と技術の「通訳」として機能します。<br><br><strong>具体的な活動例:</strong> 各部署への定期的なヒアリング、業務フロー分析支援。' },
-        { id: 3, name: '人材育成とナレッジハブ', title: '教育者', detail: '全社員のITリテラシーを底上げする研修を企画・実施します。また、各部署の成功事例やノウハウを集約し、全社に共有する「ナレッジハブ」としての役割も重要です。<br><br><strong>具体的な活動例:</strong> 全社員向けITリテラシー研修、成功事例共有会の開催。' },
-        { id: 4, name: 'ボトムアップの支援', title: '伴走者', detail: '現場から生まれる「こうすればもっと良くなる」という改善のアイデアを吸い上げ、その実現を技術的な側面からサポートします。<br><br><strong>具体的な活動例:</strong> クイックウィン・プロジェクトの技術支援、RPAやGAS開発のサポート。' },
-        { id: 5, name: '全社最適のガバナンス', title: '番人', detail: '各部署がバラバラにシステムを導入するのではなく、全社的な視点でデータ連携やセキュリティを考慮した技術選定が行われるよう、ガバナンスを効かせる役割を担います。<br><br><strong>具体的な活動例:</strong> 全社的なシステム導入ガイドラインの策定、新規システム導入時のレビュー。' }
+        { 
+            id: 1, name: 'ビジョンの策定と浸透', title: '戦略家', 
+            detail: '経営層と連携し全社DXビジョンを策定。現場が「自分ごと」として捉えられるよう浸透させます。',
+            currentSituation: '<strong>現状：</strong>グループ内のDX情報が乱立し、現場が「何から手をつければよいか」分からない状態。全社を導く明確な羅針盤が不在です。',
+            activities: '経営層とのDXビジョン策定ワークショップ、全社向け説明会の企画・実施。'
+        },
+        { 
+            id: 2, name: '事業部門との「通訳」', title: 'ビジネスパートナー', 
+            detail: '現場のビジネス課題を深く理解し、解決に最適なデジタル技術を提案。事業と技術の「通訳」として機能します。',
+            currentSituation: '<strong>現状：</strong>現場に改善アイデアがあっても「どう動いていいか分からない」状態。ビジネス課題と技術を結びつける役割が欠けています。',
+            activities: '各部署への定期的なヒアリング、業務フロー分析支援。'
+        },
+        { 
+            id: 3, name: '人材育成とナレッジハブ', title: '教育者', 
+            detail: '全社員のITリテラシーを底上げし、各部署の成功事例やノウハウを集約・共有する「ナレッジハブ」となります。',
+            currentSituation: '<strong>現状：</strong>GAS等の活用が一部担当者に留まり、ノウハウが属人化。体系的なIT人材育成プログラムもありません。',
+            activities: '全社員向けITリテラシー研修、成功事例共有会の開催。'
+        },
+        { 
+            id: 4, name: 'ボトムアップの支援', title: '伴走者', 
+            detail: '現場から生まれる改善アイデアを吸い上げ、その実現を技術的な側面からサポートします。',
+            currentSituation: '<strong>現状：</strong>現場主導の改善活動を技術的に支援し、アイデアを形にするための伴走者が不足しています。',
+            activities: 'クイックウィン・プロジェクトの技術支援、RPAやGAS開発のサポート。'
+        },
+        { 
+            id: 5, name: '全社最適のガバナンス', title: '番人', 
+            detail: '各部署がバラバラにシステム導入するのを防ぎ、全社視点でデータ連携やセキュリティを考慮した技術選定を管理します。',
+            currentSituation: '<strong>現状：</strong>部署ごとにシステムが導入され、連携が取れず二重入力が発生するなど、非効率な投資が見られます。',
+            activities: '全社的なシステム導入ガイドラインの策定、新規システム導入時のレビュー。'
+        }
     ];
 
     function updateRoleDetail(roleId) {
         const role = rolesData.find(r => r.id == roleId);
         roleDetail.innerHTML = `
             <h4 class="text-xl font-bold mb-2 anablue-text">${role.name}（${role.title}）</h4>
-            <div class="text-gray-700">${role.detail.replace(/<br>/g, '<br />')}</div>
+            <p class="text-gray-700 mb-4">${role.detail.replace(/<br>/g, '<br />')}</p>
+            <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400 mb-4">
+                <p class="text-gray-700 text-sm">${role.currentSituation.replace(/<br>/g, '<br />')}</p>
+            </div>
+            <div class="p-4 bg-blue-50 border-l-4 border-blue-300">
+                 <p class="font-semibold text-sm anablue-text">具体的な活動例:</p>
+                 <p class="text-gray-700 text-sm mt-1">${role.activities.replace(/<br>/g, '<br />')}</p>
+            </div>
         `;
     }
     
