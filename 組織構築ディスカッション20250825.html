@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DX推進体制 構築支援SPA</title>
+    <title>DX推進体制構築ディスカッション資料</title>
     <!-- Chosen Palette: ANA Corporate Blue -->
     <!-- Application Structure Plan: A narrative-driven, single-page application designed to build a persuasive case for establishing a formal DX promotion system. The flow is: 1. The "Why" (ANA's current challenges, making the problem relatable), 2. The "How" (the ideal model based on the IPA guide, broken into interactive sections for Organization, Talent, and Culture), and 3. The "What" (a concrete, phased action plan). This logical progression from problem to ideal solution to actionable steps was chosen to guide users through a compelling argument, making the final proposal feel both necessary and achievable. -->
     <!-- Visualization & Content Choices: 
@@ -59,168 +59,245 @@
         details[open] .details-marker {
             transform: rotate(90deg);
         }
+        .toc-link.active {
+            color: var(--anablue);
+            font-weight: 600;
+            transform: translateX(5px);
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="anablue-bg text-white p-4 md:p-6 shadow-lg sticky top-0 z-20">
         <div class="container mx-auto max-w-6xl flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold">DX推進体制 構築支援レポート</h1>
-            <nav id="main-nav" class="hidden md:flex space-x-6 text-sm font-semibold">
-                <a href="#why" class="text-white opacity-80 hover:opacity-100">なぜ必要か</a>
-                <a href="#how" class="text-white opacity-80 hover:opacity-100">理想の姿</a>
-                <a href="#what" class="text-white opacity-80 hover:opacity-100">具体的な進め方</a>
-            </nav>
+            <h1 class="text-xl md:text-2xl font-bold">DX推進体制構築支援レポート</h1>
         </div>
     </header>
 
-    <main class="container mx-auto max-w-5xl p-4 md:p-8 mt-8">
+    <div class="container mx-auto max-w-7xl flex">
+        <main class="w-full md:w-3/4 p-4 md:p-8 mt-8">
 
-        <section id="why" class="section-card">
-            <h2 class="text-3xl font-bold anablue-text mb-4">1. なぜ今、専門の推進体制が必要なのか？</h2>
-            <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                全部門ヒアリングから見えたのは、DXへの強い期待と同時に、「誰に相談すればよいか分からない」という共通の悩みでした。専門体制の不在は、既に具体的な問題として顕在化しています。IPAの「DX実践手引書」も参照しつつ、貴社の現状課題を整理します。
-            </p>
-            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3 anablue-text">非効率な投資</h3>
-                    <p class="text-gray-700">人事課の事例のように、各部署が個別の判断でシステムを導入した結果、連携が取れず二重入力が発生しています。全社的な視点がなければ、こうした非効率な投資が繰り返されるリスクがあります。</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3 anablue-text">成功事例の属人化</h3>
-                    <p class="text-gray-700">一部職員によるGAS等を活用した業務改善は素晴らしい一方、そのノウハウが共有されず、異動と共に失われています。個人の努力に依存せず、組織として成功事例を横展開する仕組みが必要です。</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3 anablue-text">方向性の欠如</h3>
-                    <p class="text-gray-700">グループ内にDX情報が乱立し、現場は「何から手をつければよいか分からない」状態です。明確な指針を示し、現場のエネルギーを導く羅針盤役が不在です。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="how" class="section-card">
-            <h2 class="text-3xl font-bold anablue-text mb-4">2. 理想の姿：変革をドライブする組織とは</h2>
-            <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                DXを成功に導くためには、技術だけでなく「組織」「人材」「文化」「技術アプローチ」の改革が不可欠です。ここではIPAの「DX実践手引書」で示されているベストプラクティスを基に、貴社が目指すべき理想の姿と現状のギャップを探ります。
-            </p>
-            
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「組織」：DX推進組織に求められる5つの役割</h3>
-                <div class="flex flex-col md:flex-row gap-8">
-                    <div id="role-list" class="md:w-1/3 flex flex-col space-y-2">
-                        <!-- Role items will be dynamically inserted here -->
-                    </div>
-                    <div id="role-detail" class="md:w-2/3 p-6 bg-gray-50 rounded-lg min-h-[200px]">
-                        <!-- Role details will be dynamically inserted here -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「人材」：変革を担う人材の確保と育成</h3>
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <div class="relative h-56 w-64 flex-shrink-0">
-                            <div class="yatagarasu-circle anablue-bg absolute top-0 left-1/2 -translate-x-1/2">事業<br>(ビジネス)</div>
-                            <div class="yatagarasu-circle anablue-bg absolute bottom-0 left-0">技術<br>(デジタル)</div>
-                            <div class="yatagarasu-circle anablue-bg absolute bottom-0 right-0">経営<br>(マネジメント)</div>
-                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full anasky-bg flex items-center justify-center text-white font-bold text-center leading-tight">ヤタガラス人材</div>
-                        </div>
-                        <div>
-                             <h4 class="text-xl font-bold mb-2 anablue-text">「ヤタガラス人材」の育成</h4>
-                             <p class="text-gray-600">プログラミング等の技術知識だけでなく、事業と組織を深く理解し、デジタルを組み合わせて未来を描ける「両利き人材」、特に事業・技術・経営の3つの観点に通じる「ヤタガラス人材」がDX推進の中心となります。</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 border-t pt-6">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
-                                <span>具体的な人材育成アプローチ</span>
-                                <span class="details-marker transform group-open:rotate-90 transition-transform duration-200">▶</span>
-                            </summary>
-                            <div class="mt-4 text-gray-600 space-y-2 text-sm">
-                                <p><strong>DXスキルの確保・育成：</strong>社内にDXスキルを持つ人材の確保・育成が喫緊の課題です。既存社員の育成に加え、外部からの専門家招聘も検討する必要があります。</p>
-                                <p><strong>社内ローテーションと経験の機会提供：</strong>組織内で人事ローテーション制度を活用し、事業現場の社員をDXプロジェクトに巻き込むことで、スキルセットを意図的に身につけさせることができます。</p>
-                                <p><strong>キャリアパスとの連携：</strong>デジタル人材の育成はキャリアパスと紐付け、業務を知る情熱的な人材にIT技術教育を受けさせ、両方の会話ができる人材を育てるべきです。</p>
-                                <p><strong>全社員のITリテラシー向上：</strong>全ての社員がデジタル技術を活用できるようなITリテラシー教育が必要です。</p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「文化」：変革を支えるマインドセット</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                     <div class="p-6 bg-gray-50 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2 anablue-text">ビジョン共有とリーダーシップ</h4>
-                        <p class="text-gray-600">DXの起点は、組織の将来像・ビジョンを経営層から現場まで徹底的に議論し、共有することです。経営層の強い意志とコミットメントが不可欠です。</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2 anablue-text">現場尊重と連携体制</h4>
-                        <p class="text-gray-600">現場の経験や課題から生まれたアイデアを最大限活用し、部門横断的な協力体制と、ビジネスと技術をつなぐ「通訳」となる役割が求められます。</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2 anablue-text">アジャイルマインド</h4>
-                        <p class="text-gray-600">「まずやってみる」姿勢で仮説検証を繰り返し、失敗から学び素早く軌道修正する文化を醸成します。</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2 anablue-text">失敗を許容する文化</h4>
-                        <p class="text-gray-600">挑戦を称賛し、失敗を学びの機会として次に活かす心理的安全性が確保された文化を育みます。</p>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「技術」：DXを実現するITシステムのあるべき姿</h3>
-                <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                    技術的アプローチは、人材という土台の上に、安全で柔軟なITインフラを構築し、その上で効率的かつ高度な業務基盤を実現していくという階層構造で考えることが重要です。
+            <section id="summary" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-4">エグゼクティブサマリ</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    この度の全部門ヒアリングを通じて、現場が抱える64件の多様な課題を特定しました。本レポートは、これらの課題を構造的に分析し、ANA沖縄空港が今後取り組むべきDX推進の方向性を明確にすることを目的としています。分析の結果、全社のDXを成功に導く鍵は、全ての施策を支える「1つの土台」と、その上で並行して取り組むべき「3つの戦略領域」にあると結論付けました。本レポートでご提案する内容は、<a href="https://www.ipa.go.jp/digital/dx/dx-tebikisyo.html" target="_blank" rel="noopener noreferrer" class="anasky-text hover:underline">IPAの「DX実践手引書」</a>も参照しつつ、貴社の現状課題を整理したものです。
                 </p>
-                <div class="p-6 bg-gray-50 rounded-lg flex flex-col items-center">
-                    <div class="w-full max-w-md space-y-1 text-center font-bold text-white">
-                        <div class="p-4 bg-sky-500 rounded-t-lg text-lg w-1/2 mx-auto">デジタル業務基盤</div>
-                        <div class="p-4 bg-sky-600 text-lg w-2/3 mx-auto">ITインフラ/情報セキュリティ</div>
-                        <div class="p-4 anablue-bg rounded-b-lg text-lg w-full">デジタル人財育成</div>
+            </section>
+
+            <section id="agenda" class="section-card light-gray-bg">
+                <h2 class="text-3xl font-bold anablue-text mb-4">アジェンダ</h2>
+                <ul class="space-y-3">
+                    <li><a href="#why" class="text-lg text-gray-700 hover:text-sky-600 transition-colors">1. なぜ今、専門の推進体制が必要なのか？</a></li>
+                    <li><a href="#how" class="text-lg text-gray-700 hover:text-sky-600 transition-colors">2. 理想の姿：変革をドライブする組織とは</a></li>
+                    <li><a href="#discussion" class="text-lg text-gray-700 hover:text-sky-600 transition-colors">3. 主要な論点：ANA沖縄空港様のDX推進体制を考える</a></li>
+                    <li><a href="#what" class="text-lg text-gray-700 hover:text-sky-600 transition-colors">4. 具体的な進め方：現実的な2フェーズアプローチ</a></li>
+                </ul>
+            </section>
+
+            <section id="why" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-4">1. なぜ今、専門の推進体制が必要なのか？</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    全部門ヒアリングから見えたのは、DXへの強い期待と同時に、「誰に相談すればよいか分からない」という共通の悩みでした。専門体制の不在は、既に具体的な問題として顕在化しています。
+                </p>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h3 class="text-xl font-bold mb-3 anablue-text">非効率な投資</h3>
+                        <p class="text-gray-700">人事課の事例のように、各部署が個別の判断でシステムを導入した結果、連携が取れず二重入力が発生しています。全社的な視点がなければ、こうした非効率な投資が繰り返されるリスクがあります。</p>
                     </div>
-                    <p class="w-full text-center mt-4 text-gray-600">人材という土台の上に、安全なインフラを築き、最終的に業務を変革するアプリケーションが機能します。</p>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h3 class="text-xl font-bold mb-3 anablue-text">成功事例の属人化</h3>
+                        <p class="text-gray-700">一部職員によるGAS等を活用した業務改善は素晴らしい一方、そのノウハウが共有されず、異動と共に失われています。個人の努力に依存せず、組織として成功事例を横展開する仕組みが必要です。</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <h3 class="text-xl font-bold mb-3 anablue-text">方向性の欠如</h3>
+                        <p class="text-gray-700">グループ内にDX情報が乱立し、現場は「何から手をつければよいか分からない」状態です。明確な指針を示し、現場のエネルギーを導く羅針盤役が不在です。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-4">2. 理想の姿：変革をドライブする組織とは</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    DXを成功に導くためには、技術だけでなく「組織」「人材」「文化」「技術アプローチ」の改革が不可欠です。ここではIPAの「DX実践手引書」で示されているベストプラクティスを基に、貴社が目指すべき理想の姿と現状のギャップを探ります。
+                </p>
+                
+                <div id="sub-how-1" class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「組織」：DX推進組織に求められる5つの役割</h3>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div id="role-list" class="md:w-1/3 flex flex-col space-y-2">
+                        </div>
+                        <div id="role-detail" class="md:w-2/3 p-6 bg-gray-50 rounded-lg min-h-[200px]">
+                        </div>
+                    </div>
                 </div>
 
-                 <div class="mt-6 border-t pt-6">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
-                                <span>具体的なデジタル技術の活用例</span>
-                                <span class="details-marker transform group-open:rotate-90 transition-transform duration-200">▶</span>
-                            </summary>
-                            <div class="mt-4 text-gray-600 space-y-2 text-sm">
-                                <p><strong>RPA・GAS：</strong>定型的なPC作業やメール処理の自動化に活用します。</p>
-                                <p><strong>Google Workspace：</strong>Googleフォームを活用した申請書や報告書の自動生成、スプレッドシートによるデータ管理などが進められています。</p>
-                                <p><strong>AI：</strong>インシデント報告書の整理整頓、専門業務の高度化、教育レベルの平準化、危険物確認支援などに活用が期待されます。</p>
-                                <p><strong>IoT：</strong>GPSでの車両位置把握など、現場のデータを収集・分析し、作業効率化や高度化に生かします。</p>
-                                <p><strong>GrabPad：</strong>ペーパーレス化の推進や現場作業の効率化に活用します。</p>
+                <div id="sub-how-2" class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「人材」：変革を担う人材の確保と育成</h3>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="relative h-56 w-64 flex-shrink-0">
+                                <div class="yatagarasu-circle anablue-bg absolute top-0 left-1/2 -translate-x-1/2">事業<br>(ビジネス)</div>
+                                <div class="yatagarasu-circle anablue-bg absolute bottom-0 left-0">技術<br>(デジタル)</div>
+                                <div class="yatagarasu-circle anablue-bg absolute bottom-0 right-0">経営<br>(マネジメント)</div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full anasky-bg flex items-center justify-center text-white font-bold text-center leading-tight">ヤタガラス人材</div>
                             </div>
-                        </details>
+                            <div>
+                                 <h4 class="text-xl font-bold mb-2 anablue-text">「ヤタガラス人材」の育成</h4>
+                                 <p class="text-gray-600">プログラミング等の技術知識だけでなく、事業と組織を深く理解し、デジタルを組み合わせて未来を描ける「両利き人材」、特に事業・技術・経営の3つの観点に通じる「ヤタガラス人材」がDX推進の中心となります。</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 border-t pt-6">
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                    <span>具体的な人材育成アプローチ</span>
+                                    <span class="details-marker transform group-open:rotate-90 transition-transform duration-200">▶</span>
+                                </summary>
+                                <div class="mt-4 text-gray-600 space-y-2 text-sm">
+                                    <p><strong>DXスキルの確保・育成：</strong>社内にDXスキルを持つ人材の確保・育成が喫緊の課題です。既存社員の育成に加え、外部からの専門家招聘も検討する必要があります。</p>
+                                    <p><strong>社内ローテーションと経験の機会提供：</strong>組織内で人事ローテーション制度を活用し、事業現場の社員をDXプロジェクトに巻き込むことで、スキルセットを意図的に身につけさせることができます。</p>
+                                    <p><strong>キャリアパスとの連携：</strong>デジタル人材の育成はキャリアパスと紐付け、業務を知る情熱的な人材にIT技術教育を受けさせ、両方の会話ができる人材を育てるべきです。</p>
+                                    <p><strong>全社員のITリテラシー向上：</strong>全ての社員がデジタル技術を活用できるようなITリテラシー教育が必要です。</p>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-            </div>
-        </section>
-
-        <section id="what" class="section-card">
-            <h2 class="text-3xl font-bold anablue-text mb-4">3. 具体的な進め方：現実的な2フェーズアプローチ</h2>
-            <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                理想の姿に向けて、まずは小さなチームで成功体験を積み、それを基に本格的な組織へと発展させる、現実的な2段階のアプローチをご提案します。
-            </p>
-            <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-10 h-10 anablue-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
-                    <h3 class="font-bold text-xl dark-text mb-2">フェーズ1：パイロットチームの組成（〜6ヶ月）</h3>
-                    <p class="text-gray-600">企画課が中心となり、各部署から変革意欲の高いキーマンを選出。クイックウィン・プロジェクトの成功を通じて、チーム連携の型を作ります。我々もチームの一員として伴走します。</p>
                 </div>
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-10 h-10 anablue-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
-                    <h3 class="font-bold text-xl dark-text mb-2">フェーズ2：正式な専門組織への発展（6ヶ月〜）</h3>
-                    <p class="text-gray-600">パイロットチームの成功と学びを基に、正式な「DX推進室」へと発展させます。役割と権限を明確化し、必要な予算を確保。内部育成と並行し、外部からの専門家採用も検討します。</p>
-                </div>
-            </div>
-        </section>
 
-    </main>
+                <div id="sub-how-3" class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「文化」：変革を支えるマインドセット</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                         <div class="p-6 bg-gray-50 rounded-lg">
+                            <h4 class="text-xl font-bold mb-2 anablue-text">ビジョン共有とリーダーシップ</h4>
+                            <p class="text-gray-600">DXの起点は、組織の将来像・ビジョンを経営層から現場まで徹底的に議論し、共有することです。経営層の強い意志とコミットメントが不可欠です。</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg">
+                            <h4 class="text-xl font-bold mb-2 anablue-text">現場尊重と連携体制</h4>
+                            <p class="text-gray-600">現場の経験や課題から生まれたアイデアを最大限活用し、部門横断的な協力体制と、ビジネスと技術をつなぐ「通訳」となる役割が求められます。</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg">
+                            <h4 class="text-xl font-bold mb-2 anablue-text">アジャイルマインド</h4>
+                            <p class="text-gray-600">「まずやってみる」姿勢で仮説検証を繰り返し、失敗から学び素早く軌道修正する文化を醸成します。</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg">
+                            <h4 class="text-xl font-bold mb-2 anablue-text">失敗を許容する文化</h4>
+                            <p class="text-gray-600">挑戦を称賛し、失敗を学びの機会として次に活かす心理的安全性が確保された文化を育みます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sub-how-4">
+                    <h3 class="text-2xl font-semibold mb-4 dark-text">理想の「技術」：DXを実現するITシステムのあるべき姿</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        技術的アプローチは、人材という土台の上に、安全で柔軟なITインフラを構築し、その上で効率的かつ高度な業務基盤を実現していくという階層構造で考えることが重要です。
+                    </p>
+                    <div class="p-6 bg-gray-50 rounded-lg flex flex-col items-center relative">
+                        <div class="w-full max-w-md space-y-1 text-center font-bold text-white">
+                            <div class="p-4 bg-sky-500 rounded-t-lg text-lg w-1/2 mx-auto">デジタル業務基盤</div>
+                            <div class="p-4 bg-sky-600 text-lg w-2/3 mx-auto">ITインフラ/情報セキュリティ</div>
+                            <div class="p-4 anablue-bg rounded-b-lg text-lg w-full border-4 border-yellow-400 ring-4 ring-yellow-200">デジタル人財育成</div>
+                        </div>
+                        <p class="w-full text-center mt-4 text-gray-600">人材という土台の上に、安全なインフラを築き、最終的に業務を変革するアプリケーションが機能します。</p>
+                    </div>
+
+                     <div class="mt-6 border-t pt-6">
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                    <span>具体的なデジタル技術の活用例</span>
+                                    <span class="details-marker transform group-open:rotate-90 transition-transform duration-200">▶</span>
+                                </summary>
+                                <div class="mt-4 text-gray-600 space-y-2 text-sm">
+                                    <p><strong>RPA・GAS：</strong>定型的なPC作業やメール処理の自動化に活用します。</p>
+                                    <p><strong>Google Workspace：</strong>Googleフォームを活用した申請書や報告書の自動生成、スプレッドシートによるデータ管理などが進められています。</p>
+                                    <p><strong>AI：</strong>インシデント報告書の整理整頓、専門業務の高度化、教育レベルの平準化、危険物確認支援などに活用が期待されます。</p>
+                                    <p><strong>IoT：</strong>GPSでの車両位置把握など、現場のデータを収集・分析し、作業効率化や高度化に生かします。</p>
+                                    <p><strong>GraPad：</strong>ペーパーレス化の推進や現場作業の効率化に活用します。</p>
+                                </div>
+                            </details>
+                        </div>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-4">3. 主要な論点：ANA沖縄空港様のDX推進体制を考える</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    理想の姿を実現するために、貴社の状況に合わせて具体的に検討すべき3つの重要な論点をご提示します。これらの論点についてディスカッションを深めることが、次の一歩に繋がります。
+                </p>
+
+                <div class="space-y-8">
+                    <div class="p-6 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                        <h3 class="text-xl font-bold mb-3 dark-text">論点①：DX推進組織の最適なモデルは？</h3>
+                        <p class="text-gray-700 mb-4">「守りのIT」を担うASY様との連携を前提としつつ、変革を主導する「攻めのDX」組織をどのような形で立ち上げるべきか、3つのモデルを基に議論します。</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                            <div class="p-4 bg-white rounded shadow">
+                                <h4 class="font-semibold anablue-text">A: ASY拡張モデル</h4>
+                                <p class="text-sm text-gray-600 mt-2">既存のIT機能との連携を最重視するモデル</p>
+                            </div>
+                            <div class="p-4 bg-white rounded shadow">
+                                <h4 class="font-semibold anablue-text">B: 事業部門拡張モデル</h4>
+                                <p class="text-sm text-gray-600 mt-2">現場主導での迅速なデジタル化を重視するモデル</p>
+                            </div>
+                            <div class="p-4 bg-white rounded shadow">
+                                <h4 class="font-semibold anablue-text">C: 独立DX推進部門モデル</h4>
+                                <p class="text-sm text-gray-600 mt-2">全社横断でのガバナンスと戦略実行を重視するモデル</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-800 font-semibold">ご提案：これまでのヒアリングで明らかになった「非効率な投資」「成功事例の属人化」「方向性の欠如」といった全社横断的な課題を根本的に解決するには、特定の部門の拡張ではなく、全社を俯瞰し、強力なガバナンスと戦略実行を担う「C: 独立DX推進部門モデル」が最も効果的であると考えられます。</p>
+                    </div>
+
+                    <div class="p-6 bg-sky-50 rounded-lg border-l-4 border-sky-400">
+                        <h3 class="text-xl font-bold mb-3 dark-text">論点②：人材育成・確保の戦略は？</h3>
+                        <p class="text-gray-700 mb-4">DX人材をどのように確保し、育成していくか。内製化と外部活用の最適なバランスを議論します。</p>
+                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">内製化すべき領域</h4>
+                                <p class="text-sm text-gray-600 mt-1">競争優位性に直結するコア領域、データ活用領域など</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">外部を活用する領域</h4>
+                                <p class="text-sm text-gray-600 mt-1">汎用的なシステム開発、専門的な技術コンサルティングなど</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-800 font-semibold">ご提案：まずはリスクの少ない内部人材の育成を基本線とし、それを補完する形でASY様や我々のような外部パートナーを活用するアプローチを推奨します。</p>
+                    </div>
+
+                    <div class="p-6 bg-green-50 rounded-lg border-l-4 border-green-400">
+                        <h3 class="text-xl font-bold mb-3 dark-text">論点③：DXを支える人事戦略（採用・育成・評価）は？</h3>
+                        <p class="text-gray-700 mb-4">DX人材が活躍し、成長できる環境を整えるためには、人事制度のアップデートも重要な論点です。特に人事課の皆様と、以下のようなテーマについて議論を深めたいと考えております。</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                            <li><strong>採用：</strong>外部から専門人材を確保するために、柔軟な採用制度（例：<a href="https://www.digital.go.jp/recruit" target="_blank" rel="noopener noreferrer" class="anasky-text hover:underline">デジタル庁の兼業許可や民間準拠の給与体系</a>）を検討できないか？</li>
+                            <li><strong>育成：</strong>全社的なITリテラシー向上のための研修や、DX関連資格（例：<a href="https://www.ipa.go.jp/shiken/kubun/ip.html" target="_blank" rel="noopener noreferrer" class="anasky-text hover:underline">ITパスポート</a>）の取得支援制度を導入できないか？</li>
+                            <li><strong>評価：</strong>資格取得やDXプロジェクトへの貢献を人事評価に反映させることで、従業員のエンゲージメントを高めることはできないか？</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="what" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-4">4. 具体的な進め方：現実的な2フェーズアプローチ</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    理想の姿に向けて、まずは小さなチームで成功体験を積み、それを基に本格的な組織へと発展させる、現実的な2段階のアプローチをご提案します。
+                </p>
+                <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anablue-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">フェーズ1：パイロットチームの組成とクイックウィンの実行（〜6ヶ月）</h3>
+                        <p class="text-gray-600">企画課が中心となり、各部署から変革意欲の高いキーマンを選出してパイロットチームを組成します。このチームが最初のタスクとして「クイックウィン・プロジェクト」に取り組み、短期的な成功体験を創出することで、全社的なDX推進の機運を高めます。我々もチームの一員として伴走します。</p>
+                    </div>
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anablue-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">フェーズ2：正式な専門組織への発展（6ヶ月〜）</h3>
+                        <p class="text-gray-600">パイロットチームの成功と学びを基に、正式な「DX推進室」へと発展させます。役割と権限を明確化し、必要な予算を確保。内部育成と並行し、外部からの専門家採用も検討します。</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <aside class="hidden md:block w-1/4 p-8 sticky top-24 h-screen">
+            <nav id="toc" class="space-y-3 text-sm">
+                <h3 class="font-bold dark-text mb-4">目次</h3>
+            </nav>
+        </aside>
+    </div>
 
     <footer class="text-center p-6 mt-8 bg-gray-200">
         <p class="text-gray-600">&copy; 2025 株式会社グローバルパートナーズテクノロジー</p>
@@ -230,7 +307,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const roleList = document.getElementById('role-list');
     const roleDetail = document.getElementById('role-detail');
-    const mainNav = document.getElementById('main-nav');
+    const toc = document.getElementById('toc');
 
     const rolesData = [
         { 
@@ -297,16 +374,67 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    mainNav.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView();
+    const sections = document.querySelectorAll('main section');
+    sections.forEach(section => {
+        const h2 = section.querySelector('h2');
+        if (h2 && section.id) {
+            const link = document.createElement('a');
+            link.href = `#${section.id}`;
+            link.textContent = h2.textContent;
+            link.className = 'block toc-link text-gray-500 hover:text-gray-800 transition-transform duration-200';
+            link.dataset.targetId = section.id;
+            toc.appendChild(link);
+
+            const subheadings = section.querySelectorAll('div[id^="sub-how-"]');
+            subheadings.forEach(sub => {
+                const subH3 = sub.querySelector('h3');
+                if(subH3 && sub.id) {
+                    const subLink = document.createElement('a');
+                    subLink.href = `#${sub.id}`;
+                    subLink.textContent = subH3.textContent;
+                    subLink.className = 'block toc-link text-gray-500 hover:text-gray-800 transition-transform duration-200 pl-4 text-xs';
+                    subLink.dataset.targetId = sub.id;
+                    toc.appendChild(subLink);
+                }
+            });
         }
     });
 
-    roleList.querySelector('.role-item').classList.add('active');
-    updateRoleDetail('1');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            if (toc) {
+                const tocLink = toc.querySelector(`a[data-target-id="${id}"]`);
+                if (entry.isIntersecting && tocLink) {
+                    document.querySelectorAll('.toc-link').forEach(link => link.classList.remove('active'));
+                    tocLink.classList.add('active');
+                }
+            }
+        });
+    }, { rootMargin: "-30% 0px -70% 0px" });
+
+    document.querySelectorAll('main section, main div[id^="sub-how-"]').forEach(section => {
+        if (section.id) {
+            observer.observe(section);
+        }
+    });
+
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    allLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    if(roleList && roleList.querySelector('.role-item')) {
+        roleList.querySelector('.role-item').classList.add('active');
+        updateRoleDetail('1');
+    }
 });
 </script>
 </body>
