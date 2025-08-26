@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乗客アンケート整理業務DX化プロジェクト企画書 SPA</title>
+    <!-- Chosen Palette: ANA Corporate Blue -->
+    <!-- Application Structure Plan: A project-plan-oriented SPA. The structure is designed to be a concrete guide for execution: 1. Project Charter (defining goal, scope, timeline), 2. Key Questions to Solve (clarifying the necessary analysis points before building), 3. Action Plan (a detailed PoC timeline), 4. Deliverables & Success Metrics (defining what will be produced and how to measure success). This structure was chosen to be a practical, forward-looking planning document, moving beyond justification to focus on the specifics of implementation. -->
+    <!-- Visualization & Content Choices: 
+        - Project Charter: Goal: Inform -> Viz: Structured HTML/CSS table -> Justification: The clearest and most professional way to present core project parameters.
+        - Key Questions: Goal: Organize/Inform -> Viz: 3-Card Layout -> Justification: Breaks down the required investigation into logical, digestible themes (Process, Technology, Data).
+        - Action Plan: Goal: Organize/Change -> Viz: Structured HTML/CSS Timeline -> Justification: The most intuitive way to present a time-based, phased plan, making it feel concrete and manageable.
+        - Deliverables & Success Metrics: Goal: Inform -> Viz: Two-column list layout -> Justification: Clearly separates the outputs (what we will create) from the outcomes (how we will measure success).
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --anablue: #004AAD;
+            --anasky: #009FFD;
+            --darktext: #242F40;
+            --lightgray-bg: #F8F9FA;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: var(--lightgray-bg); color: var(--darktext); }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px -1px rgb(0 0 0 / 0.05);
+            margin-bottom: 3rem;
+        }
+        .anablue-text { color: var(--anablue); }
+        .anablue-bg { background-color: var(--anablue); }
+        .anasky-text { color: var(--anasky); }
+        .anasky-bg { background-color: var(--anasky); }
+        .dark-text { color: var(--darktext); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto max-w-4xl p-4 md:p-8">
+
+        <header class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-5xl font-bold anablue-text">乗客アンケート整理業務DX化<br>プロジェクト企画書</h1>
+            <p class="mt-4 text-lg text-gray-500">DXの成功モデルを創出する、最初のクイックウィン実行計画</p>
+        </header>
+
+        <section id="charter" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-6">1. プロジェクト概要</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-3 pr-4 font-semibold text-gray-500 w-1/4">プロジェクト名</td>
+                            <td class="py-3 font-semibold dark-text">乗客アンケート整理業務DX化 PoCプロジェクト</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 pr-4 font-semibold text-gray-500">目的</td>
+                            <td class="py-3 text-gray-700">AIを活用してアンケート整理業務を自動化し、DXの成功事例を創出する。</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 pr-4 font-semibold text-gray-500">スコープ</td>
+                            <td class="py-3 text-gray-700">クアルトリクスから出力される月1万件のフリーコメントデータを対象とし、データ整形・分類・可視化のパイプラインを構築する。</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 pr-4 font-semibold text-gray-500">期間</td>
+                            <td class="py-3 text-gray-700">約1ヶ月（4週間）</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-gray-500">実行体制</td>
+                            <td class="py-3 text-gray-700">企画課、旅客サービス部担当者、外部コンサルタントによる合同チーム</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="questions" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-6">2. 解決すべき主要な問い（論点）</h2>
+            <p class="text-lg text-gray-600 mb-6">本プロジェクトを成功させるために、まず以下の3つの問いに対する答えを明確にする必要があります。</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <div class="text-4xl mb-3">🧑‍🤝‍🧑</div>
+                    <h3 class="text-xl font-bold mb-2 dark-text">プロセスの問い</h3>
+                    <p class="text-gray-600">現在、担当者は「どこに」「どれだけ」の時間を費やしているのか？自動化によって創出された時間を、どのような付加価値業務に振り向けるべきか？</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <div class="text-4xl mb-3">⚙️</div>
+                    <h3 class="text-xl font-bold mb-2 dark-text">テクノロジーの問い</h3>
+                    <p class="text-gray-600">「クアルトリクスが使いづらい」とは具体的にどういうことか？Google Workspace内のツール（GAS, Gemini, Looker Studio）だけで、どこまで実現可能か？</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <div class="text-4xl mb-3">📊</div>
+                    <h3 class="text-xl font-bold mb-2 dark-text">データの問い</h3>
+                    <p class="text-gray-600">どのような「表記ゆれ」のパターンが存在するのか？どのような「トピック」や「キーワード」で分類すれば、サービス改善に繋がる有益な示唆が得られるか？</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-6">3. アクションプラン (4週間)</h2>
+            <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">Week 1：現状分析と要件定義</h3>
+                    <p class="text-gray-600"><strong>アクション：</strong>旅客サービス部担当者へ業務ヒアリングを実施し、プロセスの課題を可視化。クアルトリクスの仕様と出力データを確認し、AIによる分析要件（分類トピック等）を定義します。</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">Week 2：データ処理パイプライン構築</h3>
+                    <p class="text-gray-600"><strong>アクション：</strong>GASとGemini APIを連携させ、データクレンジング（表記ゆれ統一）、トピック分類、ポジネガ判定を自動で行うプロトタイプを開発します。</p>
+                </div>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">3</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">Week 3：可視化とフィードバック</h3>
+                    <p class="text-gray-600"><strong>アクション：</strong>処理後のデータをLooker Studioで可視化するダッシュボードを構築。担当者に実際に触ってもらい、フィードバックを収集し、分析軸や表示方法を改善します。</p>
+                </div>
+                 <div class="relative pl-10">
+                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">4</div>
+                    <h3 class="font-bold text-xl dark-text mb-2">Week 4：効果測定と今後の計画策定</h3>
+                    <p class="text-gray-600"><strong>アクション：</strong>従来プロセスとの工数削減効果を定量的に測定。PoCの結果を基に、本格導入に向けた計画と、他業務への横展開案をとりまとめ、報告します。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="deliverables" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-6">4. 成果物と成功の定義</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold dark-text mb-3">主な成果物</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>現状業務プロセスと課題の整理資料</li>
+                        <li>アンケートデータ自動処理パイプライン（GAS）</li>
+                        <li>分析結果可視化ダッシュボード（Looker Studio）</li>
+                        <li>プロジェクト成果報告書（効果測定、横展開案含む）</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold dark-text mb-3">成功の定義 (KPI)</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>アンケート整理・分析にかかる月間工数を<strong>50%以上</strong>削減する。</li>
+                        <li>ダッシュボードから、サービス改善に繋がる新たなインサイト（気づき）を<strong>3つ以上</strong>発見する。</li>
+                        <li>プロジェクト関係者から、今後の本格導入に対するポジティブな合意を得る。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 mt-8 bg-gray-200">
+        <p class="text-gray-600">&copy; 2025 株式会社グローバルパートナーズテクノロジー</p>
+    </footer>
+
+</body>
+</html>
