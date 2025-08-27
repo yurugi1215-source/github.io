@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>総務部 入域パス管理業務DX化 ディスカッション資料</title>
+    <!-- Chosen Palette: Brilliant Blues -->
+    <!-- Application Structure Plan: A single-page application structured as a guided discussion document for a decision-making meeting. The flow is designed to facilitate consensus: 1. Meeting Objectives (clearly states what needs to be decided with clickable cards), 2. Key Discussion Points (the main interactive section where each objective is explored with options and rationale), 3. Context (Why this is necessary, providing background), 4. Next Steps (a concrete action plan post-decision). This structure was chosen to be highly action-oriented, starting with the end-goal (the decisions) and providing all necessary information in a structured, explorable format to support that goal. -->
+    <!-- Visualization & Content Choices: 
+        - Meeting Objectives: Goal: Organize -> Viz: Large, clickable HTML cards -> Interaction: Smooth scroll to the relevant discussion section -> Justification: Immediately focuses the meeting on its goals and provides intuitive navigation.
+        - Technical Approaches: Goal: Compare -> Viz: 3-column card layout with a "Recommended" tag -> Justification: Allows for easy comparison of technical options while guiding the discussion towards the most logical choice.
+        - Action Plan: Goal: Organize/Change -> Viz: Structured HTML/CSS Timeline -> Justification: The most intuitive way to present a time-based, phased plan.
+        - As-Is/To-Be Process: Goal: Compare -> Viz: HTML/CSS Diagrams -> Justification: Visually contrasts the current and future states to reinforce the project's value.
+        - Success Metrics: Goal: Inform -> Viz: Two-column list layout -> Justification: Clearly separates the outputs (what we will create) from the outcomes (how we will measure success).
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --anablue: #004AAD;
+            --anasky: #009FFD;
+            --darktext: #242F40;
+            --lightgray-bg: #F8F9FA;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: var(--lightgray-bg); color: var(--darktext); }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px -1px rgb(0 0 0 / 0.05);
+            margin-bottom: 3rem;
+        }
+        .anablue-text { color: var(--anablue); }
+        .anablue-bg { background-color: var(--anablue); }
+        .anasky-text { color: var(--anasky); }
+        .anasky-bg { background-color: var(--anasky); }
+        .dark-text { color: var(--darktext); }
+        .decision-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .decision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgb(0 0 0 / 0.1);
+        }
+        .flow-step {
+            border: 2px solid #E5E7EB;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9CA3AF;
+            font-size: 2rem;
+            margin: 0.5rem 0;
+        }
+        .manual-step { background-color: #F3F4F6; border-color: #D1D5DB; }
+        .automated-step { background-color: #E0F2FE; border-color: var(--anasky); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto max-w-4xl p-4 md:p-8">
+
+        <header class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-5xl font-bold anablue-text">総務部 入域パス管理業務DX化<br>ディスカッション資料</h1>
+            <p class="mt-4 text-lg text-gray-500">最初のクイックウィンを成功に導くための意思決定</p>
+        </header>
+
+        <section id="objectives" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-2">本日の会議のゴール</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                本日の会議では、入域パス管理業務のDX化を成功させるため、まず<strong>現状の業務プロセスを正確に「可視化」</strong>し、それを基に<strong>具体的なプロジェクト計画に合意する</strong>ことをゴールとします。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="#discussion-1" class="decision-card block p-6 bg-blue-50 rounded-lg text-center border-t-4 border-blue-400">
+                    <div class="text-4xl mb-3">🗺️</div>
+                    <h3 class="text-xl font-bold dark-text">ゴール①<br>現状業務プロセスの可視化</h3>
+                    <p class="text-gray-600 mt-2 text-sm">提示する業務フロー（仮説）を基に議論し、正確な現状を全員で共有する</p>
+                </a>
+                <a href="#discussion-2" class="decision-card block p-6 bg-green-50 rounded-lg text-center border-t-4 border-green-400">
+                    <div class="text-4xl mb-3">🗓️</div>
+                    <h3 class="text-xl font-bold dark-text">ゴール②<br>4週間の実行計画への合意</h3>
+                    <p class="text-gray-600 mt-2 text-sm">可視化された課題を解決するための、具体的なアクションプランに合意する</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="discussion-points">
+            <div id="discussion-1" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-6">ゴール①：現状業務プロセスの可視化 (As-Is)</h2>
+                 <p class="text-lg text-gray-600 mb-6">これまでのヒアリング情報を基に、現在の業務プロセスを以下の通り「仮説」として作成しました。この内容に<strong>過不足や認識の違いがないか</strong>、皆様と議論しながら<strong>正確な業務フローを完成させたい</strong>と考えております。</p>
+                <div class="space-y-2">
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">① カードデータ抽出</span>
+                        <p class="text-sm text-gray-500">手作業でリスト化</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">② 個人情報との紐付け</span>
+                        <p class="text-sm text-gray-500">目視で確認・入力</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">③ 更新対象者のリストアップ</span>
+                        <p class="text-sm text-gray-500">毎月手作業でExcel確認</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">④ 期限切れ通知</span>
+                        <p class="text-sm text-gray-500">手作業でメール作成・送信</p>
+                    </div>
+                </div>
+                 <div class="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                    <h4 class="font-bold text-yellow-800">ディスカッションポイント</h4>
+                    <ul class="list-disc list-inside text-sm text-yellow-900 mt-2">
+                        <li>各ステップの担当者と、おおよその作業時間は？</li>
+                        <li>使用しているExcelファイルや管理台帳はどのようなものか？</li>
+                        <li>このフロー以外に、イレギュラーな作業や確認事項は存在するか？</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="discussion-2" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-6">ゴール②：4週間のアクションプランの合意</h2>
+                <p class="text-lg text-gray-600 mb-6">現状プロセスが明確になった上で、それを解決するための具体的な4週間の実行計画について、最終的な合意形成を図ります。</p>
+                <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Week 1：課題の特定と解決策の具体化</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>本日可視化された業務フローに基づき、最も工数がかかっている、あるいはミスが発生しやすいボトルネックを特定します。その上で、AI-OCR等の技術アプローチを含めた具体的な解決策のアイデア出しと絞り込みを行います。</p>
+                    </div>
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Week 2：プロトタイプ構築</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>Googleフォームとスプレッドシート、GASを活用し、期限切れ通知を自動化するプロトタイプを開発。選択された技術アプローチに基づき、カード情報抽出の技術検証も並行して行います。</p>
+                    </div>
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">3</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Week 3：テストとフィードバック</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>担当者にプロトタイプを実際に利用してもらい、フィードバックを収集。通知メールの文面やタイミング、管理シートの使いやすさ等を改善します。</p>
+                    </div>
+                     <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">4</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Week 4：効果測定と今後の計画策定</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>従来プロセスとの工数削減効果（見込み）を定量的に算出。PoCの結果を基に、本格導入に向けた計画と、他業務への横展開案をとりまとめ、報告します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 mt-8 bg-gray-200">
+        <p class="text-gray-600">&copy; 2025 株式会社グローバルパートナーズテクノロジー</p>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const allLinks = document.querySelectorAll('a[href^="#"]');
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
