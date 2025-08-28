@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>乗客アンケート整理業務DX化プロジェクト企画書 SPA</title>
-    <!-- Chosen Palette: ANA Corporate Blue -->
+    <title>乗客アンケート整理業務DX化 ディスカッション資料</title>
+    <!-- Chosen Palette: Brilliant Blues -->
     <!-- Application Structure Plan: A project-plan-oriented SPA. The structure is designed to be a concrete guide for execution: 1. Project Charter (defining goal, scope, timeline), 2. Key Questions to Solve (clarifying the necessary analysis points before building), 3. Action Plan (a detailed PoC timeline), 4. Deliverables & Success Metrics (defining what will be produced and how to measure success). This structure was chosen to be a practical, forward-looking planning document, moving beyond justification to focus on the specifics of implementation. -->
     <!-- Visualization & Content Choices: 
         - Project Charter: Goal: Inform -> Viz: Structured HTML/CSS table -> Justification: The clearest and most professional way to present core project parameters.
@@ -38,6 +38,30 @@
         .anasky-text { color: var(--anasky); }
         .anasky-bg { background-color: var(--anasky); }
         .dark-text { color: var(--darktext); }
+        .decision-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .decision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgb(0 0 0 / 0.1);
+        }
+        .flow-step {
+            border: 2px solid #E5E7EB;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9CA3AF;
+            font-size: 2rem;
+            margin: 0.5rem 0;
+        }
+        .manual-step { background-color: #F3F4F6; border-color: #D1D5DB; }
+        .automated-step { background-color: #E0F2FE; border-color: var(--anasky); }
     </style>
 </head>
 <body class="antialiased">
@@ -45,107 +69,94 @@
     <main class="container mx-auto max-w-4xl p-4 md:p-8">
 
         <header class="text-center my-8 md:my-12">
-            <h1 class="text-4xl md:text-5xl font-bold anablue-text">乗客アンケート整理業務DX化<br>プロジェクト企画書</h1>
-            <p class="mt-4 text-lg text-gray-500">DXの成功モデルを創出する、最初のクイックウィン実行計画</p>
+            <h1 class="text-4xl md:text-5xl font-bold anablue-text">乗客アンケート整理業務DX化<br>ディスカッション資料</h1>
+            <p class="mt-4 text-lg text-gray-500">最初のクイックウィンを成功に導くための意思決定</p>
         </header>
 
-        <section id="charter" class="section-card">
-            <h2 class="text-3xl font-bold anablue-text mb-6">1. プロジェクト概要</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left">
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="py-3 pr-4 font-semibold text-gray-500 w-1/4">プロジェクト名</td>
-                            <td class="py-3 font-semibold dark-text">乗客アンケート整理業務DX化 PoCプロジェクト</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-3 pr-4 font-semibold text-gray-500">目的</td>
-                            <td class="py-3 text-gray-700">AIを活用してアンケート整理業務を自動化し、DXの成功事例を創出する。</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-3 pr-4 font-semibold text-gray-500">スコープ</td>
-                            <td class="py-3 text-gray-700">クアルトリクスから出力される月1万件のフリーコメントデータを対象とし、データ整形・分類・可視化のパイプラインを構築する。</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-3 pr-4 font-semibold text-gray-500">期間</td>
-                            <td class="py-3 text-gray-700">約1ヶ月（4週間）</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 pr-4 font-semibold text-gray-500">実行体制</td>
-                            <td class="py-3 text-gray-700">企画課、旅客サービス部担当者、外部コンサルタントによる合同チーム</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section id="objectives" class="section-card">
+            <h2 class="text-3xl font-bold anablue-text mb-2">本日の会議のゴール</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                本日の会議では、乗客アンケート整理業務のDX化を成功させるため、まず<strong>現状の業務プロセスを正確に「可視化」</strong>し、それを基に<strong>具体的なプロジェクト計画に合意する</strong>ことをゴールとします。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="#discussion-1" class="decision-card block p-6 bg-blue-50 rounded-lg text-center border-t-4 border-blue-400">
+                    <div class="text-4xl mb-3">🗺️</div>
+                    <h3 class="text-xl font-bold dark-text">ゴール①<br>現状業務プロセスの可視化</h3>
+                    <p class="text-gray-600 mt-2 text-sm">提示する業務フロー（仮説）を基に議論し、正確な現状を全員で共有する</p>
+                </a>
+                <a href="#discussion-2" class="decision-card block p-6 bg-green-50 rounded-lg text-center border-t-4 border-green-400">
+                    <div class="text-4xl mb-3">🗓️</div>
+                    <h3 class="text-xl font-bold dark-text">ゴール②<br>実行計画ステップへの合意</h3>
+                    <p class="text-gray-600 mt-2 text-sm">可視化された課題を解決するための、具体的なアクションプランに合意する</p>
+                </a>
             </div>
         </section>
 
-        <section id="questions" class="section-card">
-            <h2 class="text-3xl font-bold anablue-text mb-6">2. 解決すべき主要な問い（論点）</h2>
-            <p class="text-lg text-gray-600 mb-6">本プロジェクトを成功させるために、まず以下の3つの問いに対する答えを明確にする必要があります。</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <div class="text-4xl mb-3">🧑‍🤝‍🧑</div>
-                    <h3 class="text-xl font-bold mb-2 dark-text">プロセスの問い</h3>
-                    <p class="text-gray-600">現在、担当者は「どこに」「どれだけ」の時間を費やしているのか？自動化によって創出された時間を、どのような付加価値業務に振り向けるべきか？</p>
+        <section id="discussion-points">
+            <div id="discussion-1" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-6">ゴール①：現状業務プロセスの可視化 (As-Is)</h2>
+                 <p class="text-lg text-gray-600 mb-6">これまでのヒアリング情報を基に、現在の業務プロセスを以下の通り「仮説」として作成しました。この内容に<strong>過不足や認識の違いがないか</strong>、皆様と議論しながら<strong>正確な業務フローを完成させたい</strong>と考えております。</p>
+                <div class="space-y-2">
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">① クアルトリクスからデータ出力</span>
+                        <p class="text-sm text-gray-500">手動でCSV等をダウンロード</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">② 1万件のフリーコメントを目視確認</span>
+                        <p class="text-sm text-gray-500">Excel等で内容を一つずつ読む</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">③ 表記ゆれの修正・名寄せ</span>
+                        <p class="text-sm text-gray-500">手作業で単語を統一</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">④ トピック分類・集計</span>
+                        <p class="text-sm text-gray-500">Excel等でカテゴリ分け・集計</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step manual-step">
+                        <span class="font-semibold">⑤ 報告資料作成</span>
+                        <p class="text-sm text-gray-500">手作業でグラフ作成・転記</p>
+                    </div>
                 </div>
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <div class="text-4xl mb-3">⚙️</div>
-                    <h3 class="text-xl font-bold mb-2 dark-text">テクノロジーの問い</h3>
-                    <p class="text-gray-600">「クアルトリクスが使いづらい」とは具体的にどういうことか？Google Workspace内のツール（GAS, Gemini, Looker Studio）だけで、どこまで実現可能か？</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <div class="text-4xl mb-3">📊</div>
-                    <h3 class="text-xl font-bold mb-2 dark-text">データの問い</h3>
-                    <p class="text-gray-600">どのような「表記ゆれ」のパターンが存在するのか？どのような「トピック」や「キーワード」で分類すれば、サービス改善に繋がる有益な示唆が得られるか？</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="plan" class="section-card">
-            <h2 class="text-3xl font-bold anablue-text mb-6">3. アクションプラン (4週間)</h2>
-            <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
-                    <h3 class="font-bold text-xl dark-text mb-2">Week 1：現状分析と要件定義</h3>
-                    <p class="text-gray-600"><strong>アクション：</strong>旅客サービス部担当者へ業務ヒアリングを実施し、プロセスの課題を可視化。クアルトリクスの仕様と出力データを確認し、AIによる分析要件（分類トピック等）を定義します。</p>
-                </div>
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
-                    <h3 class="font-bold text-xl dark-text mb-2">Week 2：データ処理パイプライン構築</h3>
-                    <p class="text-gray-600"><strong>アクション：</strong>GASとGemini APIを連携させ、データクレンジング（表記ゆれ統一）、トピック分類、ポジネガ判定を自動で行うプロトタイプを開発します。</p>
-                </div>
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">3</div>
-                    <h3 class="font-bold text-xl dark-text mb-2">Week 3：可視化とフィードバック</h3>
-                    <p class="text-gray-600"><strong>アクション：</strong>処理後のデータをLooker Studioで可視化するダッシュボードを構築。担当者に実際に触ってもらい、フィードバックを収集し、分析軸や表示方法を改善します。</p>
-                </div>
-                 <div class="relative pl-10">
-                    <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">4</div>
-                    <h3 class="font-bold text-xl dark-text mb-2">Week 4：効果測定と今後の計画策定</h3>
-                    <p class="text-gray-600"><strong>アクション：</strong>従来プロセスとの工数削減効果を定量的に測定。PoCの結果を基に、本格導入に向けた計画と、他業務への横展開案をとりまとめ、報告します。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="deliverables" class="section-card">
-            <h2 class="text-3xl font-bold anablue-text mb-6">4. 成果物と成功の定義</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold dark-text mb-3">主な成果物</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>現状業務プロセスと課題の整理資料</li>
-                        <li>アンケートデータ自動処理パイプライン（GAS）</li>
-                        <li>分析結果可視化ダッシュボード（Looker Studio）</li>
-                        <li>プロジェクト成果報告書（効果測定、横展開案含む）</li>
+                 <div class="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                    <h4 class="font-bold text-yellow-800">ディスカッションポイント</h4>
+                    <ul class="list-disc list-inside text-sm text-yellow-900 mt-2">
+                        <li>各ステップの担当者と、おおよその作業時間は？</li>
+                        <li>「クアルトリクスが使いづらい」とは具体的にどの部分か？</li>
+                        <li>現在、どのような基準でトピック分類を行っているか？</li>
+                        <li>このフロー以外に、イレギュラーな作業は存在するか？</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold dark-text mb-3">成功の定義 (KPI)</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>アンケート整理・分析にかかる月間工数を<strong>50%以上</strong>削減する。</li>
-                        <li>ダッシュボードから、サービス改善に繋がる新たなインサイト（気づき）を<strong>3つ以上</strong>発見する。</li>
-                        <li>プロジェクト関係者から、今後の本格導入に対するポジティブな合意を得る。</li>
-                    </ul>
+            </div>
+
+            <div id="discussion-2" class="section-card">
+                <h2 class="text-3xl font-bold anablue-text mb-6">ゴール②：実行計画ステップの合意</h2>
+                <p class="text-lg text-gray-600 mb-6">現状プロセスが明確になった上で、それを解決するための具体的な実行ステップについて、最終的な合意形成を図ります。</p>
+                <div class="mt-8 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gray-200 before:content-[''] before:self-start">
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">1</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Step 1：課題の特定と解決策の具体化</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>本日可視化された業務フローに基づき、最も工数がかかっている、あるいはミスが発生しやすいボトルネックを特定します。その上で、具体的な解決策のアイデア出しと絞り込みを行います。</p>
+                    </div>
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">2</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Step 2：プロトタイプ構築</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>Step1で絞り込んだ解決策に基づき、業務を自動化・効率化するためのプロトタイプを開発します。技術検証もこの段階で並行して行います。</p>
+                    </div>
+                    <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">3</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Step 3：テストとフィードバック</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>担当者にプロトタイプを実際に利用してもらい、フィードバックを収集。通知メールの文面やタイミング、管理シートの使いやすさ等を改善します。</p>
+                    </div>
+                     <div class="relative pl-10">
+                        <div class="absolute left-0 top-1 w-10 h-10 anasky-bg rounded-full flex items-center justify-center text-white font-bold text-lg ring-8 ring-white">4</div>
+                        <h3 class="font-bold text-xl dark-text mb-2">Step 4：効果測定と今後の計画策定</h3>
+                        <p class="text-gray-600"><strong>アクション：</strong>従来プロセスとの工数削減効果（見込み）を定量的に算出。PoCの結果を基に、本格導入に向けた計画と、他業務への横展開案をとりまとめ、報告します。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -156,5 +167,20 @@
         <p class="text-gray-600">&copy; 2025 株式会社グローバルパートナーズテクノロジー</p>
     </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const allLinks = document.querySelectorAll('a[href^="#"]');
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
